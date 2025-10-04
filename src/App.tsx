@@ -1,5 +1,5 @@
-import "./App.css";
 import { FaFacebook, FaInstagram } from "react-icons/fa";
+import "./App.css";
 
 function App() {
   return (
