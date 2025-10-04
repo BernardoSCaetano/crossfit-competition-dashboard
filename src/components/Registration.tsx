@@ -82,13 +82,13 @@ const Registration: React.FC = () => {
   const tshirtSizes = ["XS", "S", "M", "L", "XL", "XXL", "XXXL"];
 
   return (
-    <section id="registration" className="py-20 bg-black">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+    <section id="registration" className="dashboard-section section-black">
+      <div className="container" style={{maxWidth: '1000px'}}>
+        <div className="section-header">
+          <h2 className="section-title">
             Team Registration
           </h2>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+          <p className="section-subtitle">
             Register your team for the CrossFit Black Edition Games 2025.
             Complete the form below and visit reception to finalize your
             registration.
@@ -96,38 +96,38 @@ const Registration: React.FC = () => {
         </div>
 
         {/* Registration Info Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
-          <div className="bg-red-600 p-6 rounded-lg text-center">
-            <div className="text-3xl mb-4">💰</div>
-            <h3 className="text-xl font-bold text-white mb-2">Early Bird</h3>
-            <p className="text-white/90">€17 + T-Shirt</p>
-            <p className="text-sm text-white/70">Until Oct 20th</p>
+        <div className="grid grid-3 mb-12">
+          <div className="info-card" style={{background: 'var(--primary-red)'}}>
+            <div className="info-card-icon">💰</div>
+            <h3 className="info-card-title">Early Bird</h3>
+            <p className="info-card-value">€17 + T-Shirt</p>
+            <p className="info-card-subtitle">Until Oct 20th</p>
           </div>
-          <div className="bg-gray-800 p-6 rounded-lg text-center border border-red-600">
-            <div className="text-3xl mb-4">⏰</div>
-            <h3 className="text-xl font-bold text-white mb-2">Regular</h3>
-            <p className="text-white/90">€17 + €15 T-Shirt</p>
-            <p className="text-sm text-white/70">Oct 20th - Nov 1st</p>
+          <div className="info-card">
+            <div className="info-card-icon">⏰</div>
+            <h3 className="info-card-title">Regular</h3>
+            <p className="info-card-value">€17 + €15 T-Shirt</p>
+            <p className="info-card-subtitle">Oct 20th - Nov 1st</p>
           </div>
-          <div className="bg-gray-800 p-6 rounded-lg text-center border border-red-600">
-            <div className="text-3xl mb-4">👥</div>
-            <h3 className="text-xl font-bold text-white mb-2">Team Size</h3>
-            <p className="text-white/90">3 Athletes</p>
-            <p className="text-sm text-white/70">Men's, Women's, Mixed</p>
+          <div className="info-card">
+            <div className="info-card-icon">👥</div>
+            <h3 className="info-card-title">Team Size</h3>
+            <p className="info-card-value">3 Athletes</p>
+            <p className="info-card-subtitle">Men's, Women's, Mixed</p>
           </div>
         </div>
 
         {/* Registration Form */}
-        <div className="bg-gray-800 rounded-xl p-8 border border-red-600">
+        <div className="registration-form">
           <form onSubmit={handleSubmit} className="space-y-8">
             {/* Team Information */}
             <div>
               <h3 className="text-2xl font-bold text-white mb-6">
                 Team Information
               </h3>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div>
-                  <label className="block text-white font-semibold mb-2">
+              <div className="grid grid-2">
+                <div className="form-group">
+                  <label className="form-label">
                     Team Name *
                   </label>
                   <input
@@ -136,12 +136,12 @@ const Registration: React.FC = () => {
                     value={formData.teamName}
                     onChange={handleInputChange}
                     required
-                    className="w-full px-4 py-3 bg-gray-700 text-white rounded-lg border border-gray-600 focus:border-red-500 focus:outline-none"
+                    className="form-input"
                     placeholder="Enter your team name"
                   />
                 </div>
-                <div>
-                  <label className="block text-white font-semibold mb-2">
+                <div className="form-group">
+                  <label className="form-label">
                     Category *
                   </label>
                   <select
@@ -149,7 +149,7 @@ const Registration: React.FC = () => {
                     value={formData.category}
                     onChange={handleInputChange}
                     required
-                    className="w-full px-4 py-3 bg-gray-700 text-white rounded-lg border border-gray-600 focus:border-red-500 focus:outline-none"
+                    className="form-select"
                   >
                     <option value="">Select Category</option>
                     {categories.map((category) => (
@@ -159,8 +159,8 @@ const Registration: React.FC = () => {
                     ))}
                   </select>
                 </div>
-                <div className="md:col-span-2">
-                  <label className="block text-white font-semibold mb-2">
+                <div className="form-group" style={{gridColumn: '1 / -1'}}>
+                  <label className="form-label">
                     Team Type *
                   </label>
                   <select
@@ -168,7 +168,7 @@ const Registration: React.FC = () => {
                     value={formData.teamType}
                     onChange={handleInputChange}
                     required
-                    className="w-full px-4 py-3 bg-gray-700 text-white rounded-lg border border-gray-600 focus:border-red-500 focus:outline-none"
+                    className="form-select"
                   >
                     <option value="">Select Team Type</option>
                     {teamTypes.map((type) => (
@@ -188,13 +188,13 @@ const Registration: React.FC = () => {
               </h3>
               <div className="space-y-8">
                 {[1, 2, 3].map((athleteNum) => (
-                  <div key={athleteNum} className="bg-gray-700 p-6 rounded-lg">
-                    <h4 className="text-lg font-bold text-white mb-4">
+                  <div key={athleteNum} className="athlete-card">
+                    <h4 className="athlete-title">
                       Athlete {athleteNum}
                     </h4>
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                      <div>
-                        <label className="block text-white font-semibold mb-2">
+                    <div className="grid grid-3">
+                      <div className="form-group">
+                        <label className="form-label">
                           Full Name *
                         </label>
                         <input
@@ -209,12 +209,12 @@ const Registration: React.FC = () => {
                           }
                           onChange={handleInputChange}
                           required
-                          className="w-full px-4 py-3 bg-gray-600 text-white rounded-lg border border-gray-500 focus:border-red-500 focus:outline-none"
+                          className="form-input"
                           placeholder="Full name"
                         />
                       </div>
-                      <div>
-                        <label className="block text-white font-semibold mb-2">
+                      <div className="form-group">
+                        <label className="form-label">
                           Email *
                         </label>
                         <input
@@ -229,12 +229,12 @@ const Registration: React.FC = () => {
                           }
                           onChange={handleInputChange}
                           required
-                          className="w-full px-4 py-3 bg-gray-600 text-white rounded-lg border border-gray-500 focus:border-red-500 focus:outline-none"
+                          className="form-input"
                           placeholder="email@example.com"
                         />
                       </div>
-                      <div>
-                        <label className="block text-white font-semibold mb-2">
+                      <div className="form-group">
+                        <label className="form-label">
                           T-Shirt Size *
                         </label>
                         <select
@@ -248,7 +248,7 @@ const Registration: React.FC = () => {
                           }
                           onChange={handleInputChange}
                           required
-                          className="w-full px-4 py-3 bg-gray-600 text-white rounded-lg border border-gray-500 focus:border-red-500 focus:outline-none"
+                          className="form-select"
                         >
                           <option value="">Select Size</option>
                           {tshirtSizes.map((size) => (
@@ -265,8 +265,8 @@ const Registration: React.FC = () => {
             </div>
 
             {/* Additional Notes */}
-            <div>
-              <label className="block text-white font-semibold mb-2">
+            <div className="form-group">
+              <label className="form-label">
                 Additional Notes
               </label>
               <textarea
@@ -274,13 +274,13 @@ const Registration: React.FC = () => {
                 value={formData.notes}
                 onChange={handleInputChange}
                 rows={4}
-                className="w-full px-4 py-3 bg-gray-700 text-white rounded-lg border border-gray-600 focus:border-red-500 focus:outline-none"
+                className="form-textarea"
                 placeholder="Any special requests or information..."
               />
             </div>
 
             {/* Important Information */}
-            <div className="bg-red-600/20 border border-red-600 rounded-lg p-6">
+            <div className="alert alert-warning">
               <h4 className="text-lg font-bold text-white mb-2">
                 Important Information
               </h4>
@@ -298,7 +298,8 @@ const Registration: React.FC = () => {
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="bg-red-600 hover:bg-red-700 disabled:bg-gray-600 text-white font-bold py-4 px-8 rounded-lg text-lg transition-colors shadow-lg disabled:cursor-not-allowed"
+                className="btn btn-primary"
+                style={{opacity: isSubmitting ? 0.6 : 1, cursor: isSubmitting ? 'not-allowed' : 'pointer'}}
               >
                 {isSubmitting ? "Submitting..." : "Submit Registration"}
               </button>

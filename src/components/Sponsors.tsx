@@ -51,38 +51,38 @@ const Sponsors: React.FC = () => {
   ];
 
   return (
-    <section id="sponsors" className="py-20 bg-gray-900">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+    <section id="sponsors" className="dashboard-section section-gray-900">
+      <div className="container">
+        <div className="section-header">
+          <h2 className="section-title">
             Sponsors & Partners
           </h2>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+          <p className="section-subtitle">
             Thank you to our amazing sponsors who make this event possible
           </p>
         </div>
 
         {/* Sponsors Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+        <div className="grid grid-3 mb-16">
           {sponsors.map((sponsor, index) => (
             <div
               key={index}
-              className="bg-gray-800 p-8 rounded-xl border border-red-600 text-center hover:scale-105 transition-transform duration-300"
+              className="sponsor-card"
             >
-              <div className="text-6xl mb-4">{sponsor.logo}</div>
-              <h3 className="text-2xl font-bold text-white mb-2">
+              <div className="sponsor-logo">{sponsor.logo}</div>
+              <h3 className="sponsor-name">
                 {sponsor.name}
               </h3>
-              <p className="text-red-400 font-semibold mb-2">
+              <p className="sponsor-category">
                 {sponsor.category}
               </p>
-              <p className="text-gray-300">{sponsor.description}</p>
+              <p className="sponsor-description">{sponsor.description}</p>
             </div>
           ))}
         </div>
 
         {/* Sponsor Opportunity */}
-        <div className="bg-red-600/20 border border-red-600 rounded-xl p-8 mb-16">
+        <div className="alert alert-warning mb-16">
           <div className="text-center">
             <h3 className="text-3xl font-bold text-white mb-4">
               Interested in Sponsoring?
@@ -93,7 +93,7 @@ const Sponsors: React.FC = () => {
             </p>
             <a
               href="mailto:info@crossfitblackedition.com"
-              className="inline-block bg-red-600 hover:bg-red-700 text-white font-bold py-4 px-8 rounded-lg text-lg transition-colors shadow-lg"
+              className="btn btn-primary"
             >
               Contact Us for Sponsorship
             </a>
@@ -110,27 +110,27 @@ const Sponsors: React.FC = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-3">
           {amenities.map((amenity, index) => (
             <div
               key={index}
-              className="bg-gray-800 p-6 rounded-lg border border-gray-600 hover:border-red-600 transition-colors"
+              className="amenity-card"
             >
-              <div className="text-4xl mb-4">{amenity.icon}</div>
-              <h4 className="text-xl font-bold text-white mb-2">
+              <div className="amenity-icon">{amenity.icon}</div>
+              <h4 className="amenity-title">
                 {amenity.title}
               </h4>
-              <p className="text-gray-300">{amenity.description}</p>
+              <p className="amenity-description">{amenity.description}</p>
             </div>
           ))}
         </div>
 
         {/* Event Schedule Preview */}
-        <div className="mt-16 bg-gray-800 rounded-xl p-8 border border-red-600">
+        <div className="mt-16 card">
           <h3 className="text-3xl font-bold text-white mb-8 text-center">
             Event Day Schedule
           </h3>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="grid grid-2">
             <div>
               <h4 className="text-xl font-bold text-red-400 mb-4">
                 Morning Session
