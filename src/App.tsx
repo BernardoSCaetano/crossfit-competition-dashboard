@@ -1,4 +1,4 @@
-import { FaFacebook, FaInstagram } from "react-icons/fa";
+// import { FaFacebook, FaInstagram } from "react-icons/fa";
 import "./App.css";
 
 function App() {
@@ -239,37 +239,31 @@ function App() {
                 </div>
               </a>
 
-              <button
+              <a
+                href="https://facebook.com/crossfitblackedition"
                 className="social-link"
-                onClick={() =>
-                  window.open(
-                    "https://facebook.com/crossfitblackedition",
-                    "_blank"
-                  )
-                }
+                target="_blank"
+                rel="noopener noreferrer"
               >
-                <div className="social-icon">{FaFacebook({})}</div>
+                <div className="social-icon">📘</div>
                 <div className="social-content">
                   <span className="social-name">Facebook</span>
                   <span className="social-handle">@crossfitblackedition</span>
                 </div>
-              </button>
+              </a>
 
-              <button
+              <a
+                href="https://instagram.com/crossfitblackedition"
                 className="social-link"
-                onClick={() =>
-                  window.open(
-                    "https://instagram.com/crossfitblackedition",
-                    "_blank"
-                  )
-                }
+                target="_blank"
+                rel="noopener noreferrer"
               >
-                <div className="social-icon">{FaInstagram({})}</div>
+                <div className="social-icon">📷</div>
                 <div className="social-content">
                   <span className="social-name">Instagram</span>
                   <span className="social-handle">@crossfitblackedition</span>
                 </div>
-              </button>
+              </a>
             </div>
           </div>
         </div>
