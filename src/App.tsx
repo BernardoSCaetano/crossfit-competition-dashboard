@@ -1,4 +1,5 @@
 import "./App.css";
+import { FaFacebook, FaInstagram } from "react-icons/fa";
 
 function App() {
   return (
@@ -47,7 +48,7 @@ function App() {
                 <span className="btn-icon">🌐</span>
                 Visit Main Website
               </a>
-              <a
+              {/* <a
                 href="https://crossfitblackedition.pt/registration"
                 className="btn btn-secondary"
                 target="_blank"
@@ -55,7 +56,7 @@ function App() {
               >
                 <span className="btn-icon">🏋️‍♂️</span>
                 Register Now
-              </a>
+              </a> */}
             </div>
           </div>
         </div>
@@ -145,7 +146,7 @@ function App() {
       </section>
 
       {/* Membership Plans Section */}
-      <section className="plans-section">
+      {/* <section className="plans-section">
         <div className="container">
           <div className="section-header">
             <h2 className="section-title">Join Our Community</h2>
@@ -202,7 +203,7 @@ function App() {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Contact & Social Section */}
       <section className="contact-section">
@@ -237,7 +238,7 @@ function App() {
               >
                 <div className="social-icon">📋</div>
                 <div className="social-content">
-                  <span className="social-name">Membership</span>
+                  <span className="social-name">Membership/Planos</span>
                   <span className="social-handle">View Plans</span>
                 </div>
               </a>
@@ -251,7 +252,9 @@ function App() {
                   )
                 }
               >
-                <div className="social-icon">📘</div>
+                <div className="social-icon">
+                  <FaFacebook />
+                </div>
                 <div className="social-content">
                   <span className="social-name">Facebook</span>
                   <span className="social-handle">@crossfitblackedition</span>
@@ -267,7 +270,9 @@ function App() {
                   )
                 }
               >
-                <div className="social-icon">📷</div>
+                <div className="social-icon">
+                  <FaInstagram />
+                </div>
                 <div className="social-content">
                   <span className="social-name">Instagram</span>
                   <span className="social-handle">@crossfitblackedition</span>
@@ -282,11 +287,18 @@ function App() {
       <footer className="footer">
         <div className="container">
           <div className="footer-content">
-            <img
-              src="/crossfit-black-edition-logo.png"
-              alt="CrossFit Black Edition"
-              className="footer-logo"
-            />
+            <div className="footer-brand">
+              <img
+                src="/crossfit-black-edition-logo.png"
+                alt="CrossFit Black Edition"
+                className="footer-logo"
+              />
+              <div className="footer-text">
+                <h3>CrossFit Black Edition</h3>
+                <p>GAMES 2025</p>
+              </div>
+            </div>
+
             <div className="footer-info">
               <p>© 2025 CrossFit Black Edition Games. All rights reserved.</p>
               <p>
