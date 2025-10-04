@@ -2,34 +2,34 @@ import React from "react";
 
 const CompetitionOverview: React.FC = () => {
   return (
-    <section id="overview" className="py-20 bg-gray-900">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+    <section id="overview" className="dashboard-section section-gray-900">
+      <div className="container">
+        <div className="section-header">
+          <h2 className="section-title">
             Competition Overview
           </h2>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+          <p className="section-subtitle">
             More than just a competition - it's about experiencing the true
             spirit of our community
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
+        <div className="overview-grid">
           {/* Why Participate */}
           <div>
-            <h3 className="text-3xl font-bold text-white mb-8">
+            <h3 className="section-title">
               Why Participate?
             </h3>
             <div className="space-y-6">
-              <div className="flex items-start space-x-4">
-                <div className="bg-red-600 p-3 rounded-lg flex-shrink-0">
+              <div className="overview-item">
+                <div className="overview-icon">
                   <span className="text-2xl">🤝</span>
                 </div>
-                <div>
-                  <h4 className="text-xl font-bold text-white mb-2">
+                <div className="overview-content">
+                  <h4>
                     Be Part of the Community
                   </h4>
-                  <p className="text-gray-300">
+                  <p>
                     Feel the full energy of the Box. Share the floor with people
                     you know and others you've never met before, building
                     connections and friendships.
@@ -37,15 +37,15 @@ const CompetitionOverview: React.FC = () => {
                 </div>
               </div>
 
-              <div className="flex items-start space-x-4">
-                <div className="bg-red-600 p-3 rounded-lg flex-shrink-0">
+              <div className="overview-item">
+                <div className="overview-icon">
                   <span className="text-2xl">💪</span>
                 </div>
-                <div>
-                  <h4 className="text-xl font-bold text-white mb-2">
+                <div className="overview-content">
+                  <h4>
                     Personal Challenge
                   </h4>
-                  <p className="text-gray-300">
+                  <p>
                     See how much you've improved. It's not about winning, it's
                     about surprising yourself, testing your limits, and
                     realizing you're capable of more.
@@ -53,30 +53,30 @@ const CompetitionOverview: React.FC = () => {
                 </div>
               </div>
 
-              <div className="flex items-start space-x-4">
-                <div className="bg-red-600 p-3 rounded-lg flex-shrink-0">
+              <div className="overview-item">
+                <div className="overview-icon">
                   <span className="text-2xl">🎯</span>
                 </div>
-                <div>
-                  <h4 className="text-xl font-bold text-white mb-2">
+                <div className="overview-content">
+                  <h4>
                     Extra Motivation
                   </h4>
-                  <p className="text-gray-300">
+                  <p>
                     Having a date and goal on the calendar gives you that extra
                     push to train more consistently and with clear purpose.
                   </p>
                 </div>
               </div>
 
-              <div className="flex items-start space-x-4">
-                <div className="bg-red-600 p-3 rounded-lg flex-shrink-0">
+              <div className="overview-item">
+                <div className="overview-icon">
                   <span className="text-2xl">⚖️</span>
                 </div>
-                <div>
-                  <h4 className="text-xl font-bold text-white mb-2">
+                <div className="overview-content">
+                  <h4>
                     Scaled to Your Level
                   </h4>
-                  <p className="text-gray-300">
+                  <p>
                     Our coaches will help you choose the right category,
                     ensuring workouts are challenging but doable, so you feel
                     confident and proud.
@@ -84,15 +84,15 @@ const CompetitionOverview: React.FC = () => {
                 </div>
               </div>
 
-              <div className="flex items-start space-x-4">
-                <div className="bg-red-600 p-3 rounded-lg flex-shrink-0">
+              <div className="overview-item">
+                <div className="overview-icon">
                   <span className="text-2xl">🎉</span>
                 </div>
-                <div>
-                  <h4 className="text-xl font-bold text-white mb-2">
+                <div className="overview-content">
+                  <h4>
                     Fun and Memories
                   </h4>
-                  <p className="text-gray-300">
+                  <p>
                     What stays are the smiles, cheers, high-fives, and stories
                     you'll share. A unique experience full of good vibes and
                     unforgettable moments.
@@ -103,53 +103,53 @@ const CompetitionOverview: React.FC = () => {
           </div>
 
           {/* Event Details */}
-          <div className="bg-gray-800 p-8 rounded-xl border border-red-600">
-            <h3 className="text-3xl font-bold text-white mb-8">
+          <div className="overview-card">
+            <h3 className="section-title">
               Event Details
             </h3>
 
             <div className="space-y-6">
-              <div className="flex items-center space-x-4">
-                <div className="bg-red-600 p-2 rounded-lg">
+              <div className="overview-item">
+                <div className="overview-icon">
                   <span className="text-xl">📅</span>
                 </div>
-                <div>
-                  <h4 className="text-lg font-bold text-white">Date & Time</h4>
-                  <p className="text-gray-300">
+                <div className="overview-content">
+                  <h4>Date & Time</h4>
+                  <p>
                     November 1st, 2025 • 06:45 - 18:00
                   </p>
                 </div>
               </div>
 
-              <div className="flex items-center space-x-4">
-                <div className="bg-red-600 p-2 rounded-lg">
+              <div className="overview-item">
+                <div className="overview-icon">
                   <span className="text-xl">🏋️‍♂️</span>
                 </div>
-                <div>
-                  <h4 className="text-lg font-bold text-white">Format</h4>
-                  <p className="text-gray-300">3 WODs + Final (Top 5 teams)</p>
+                <div className="overview-content">
+                  <h4>Format</h4>
+                  <p>3 WODs + Final (Top 5 teams)</p>
                 </div>
               </div>
 
-              <div className="flex items-center space-x-4">
-                <div className="bg-red-600 p-2 rounded-lg">
+              <div className="overview-item">
+                <div className="overview-icon">
                   <span className="text-xl">👥</span>
                 </div>
-                <div>
-                  <h4 className="text-lg font-bold text-white">Teams</h4>
-                  <p className="text-gray-300">
+                <div className="overview-content">
+                  <h4>Teams</h4>
+                  <p>
                     3 athletes per team • Men's, Women's & Mixed
                   </p>
                 </div>
               </div>
 
-              <div className="flex items-center space-x-4">
-                <div className="bg-red-600 p-2 rounded-lg">
+              <div className="overview-item">
+                <div className="overview-icon">
                   <span className="text-xl">💰</span>
                 </div>
-                <div>
-                  <h4 className="text-lg font-bold text-white">Registration</h4>
-                  <p className="text-gray-300">
+                <div className="overview-content">
+                  <h4>Registration</h4>
+                  <p>
                     €17 + T-Shirt (Early bird until Oct 20th)
                   </p>
                   <p className="text-gray-400 text-sm">
@@ -158,21 +158,21 @@ const CompetitionOverview: React.FC = () => {
                 </div>
               </div>
 
-              <div className="flex items-center space-x-4">
-                <div className="bg-red-600 p-2 rounded-lg">
+              <div className="overview-item">
+                <div className="overview-icon">
                   <span className="text-xl">🎥</span>
                 </div>
-                <div>
-                  <h4 className="text-lg font-bold text-white">WOD Releases</h4>
-                  <p className="text-gray-300">
+                <div className="overview-content">
+                  <h4>WOD Releases</h4>
+                  <p>
                     WOD 2: Oct 12th • WOD 3: Oct 19th
                   </p>
                 </div>
               </div>
             </div>
 
-            <div className="mt-8 p-4 bg-red-600/20 rounded-lg border border-red-600">
-              <p className="text-white font-semibold text-center">
+            <div className="alert alert-warning">
+              <p className="text-center font-semibold">
                 ⚠️ Limited spots available - Register at reception!
               </p>
             </div>
@@ -191,7 +191,7 @@ const CompetitionOverview: React.FC = () => {
           </p>
           <a
             href="#registration"
-            className="inline-block bg-red-600 hover:bg-red-700 text-white font-bold py-4 px-8 rounded-lg text-lg transition-colors shadow-lg"
+            className="btn btn-primary"
           >
             Register Now
           </a>

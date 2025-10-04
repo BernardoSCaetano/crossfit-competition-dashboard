@@ -65,45 +65,45 @@ const Categories: React.FC = () => {
   ];
 
   return (
-    <section id="categories" className="py-20 bg-black">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+    <section id="categories" className="dashboard-section section-black">
+      <div className="container">
+        <div className="section-header">
+          <h2 className="section-title">
             Competition Categories
           </h2>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+          <p className="section-subtitle">
             Choose your level and compete against athletes of similar ability.
             Our coaches will help you find the perfect category.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+        <div className="grid grid-4 mb-12">
           {categories.map((category, index) => (
             <div
               key={category.name}
-              className={`relative bg-gradient-to-br ${category.color} p-8 rounded-xl border-2 ${category.borderColor} hover:scale-105 transition-transform duration-300`}
+              className={`category-card ${category.name.toLowerCase().replace('+', '-plus')}`}
             >
               <div className="text-center mb-6">
-                <h3 className="text-3xl font-black text-white mb-2">
+                <h3 className="category-name">
                   {category.name}
                 </h3>
-                <p className="text-lg font-semibold text-white/90 mb-2">
+                <p className="category-level">
                   {category.level}
                 </p>
-                <p className="text-white/80 text-sm">{category.description}</p>
+                <p className="category-description">{category.description}</p>
               </div>
 
-              <div className="space-y-3">
+              <div className="category-features">
                 <h4 className="text-lg font-bold text-white mb-3">
                   Key Movements:
                 </h4>
                 {category.features.map((feature, featureIndex) => (
                   <div
                     key={featureIndex}
-                    className="flex items-center space-x-2"
+                    className="category-feature"
                   >
-                    <div className="w-2 h-2 bg-white rounded-full"></div>
-                    <span className="text-white/90 text-sm">{feature}</span>
+                    <div className="category-feature-dot"></div>
+                    <span className="category-feature-text">{feature}</span>
                   </div>
                 ))}
               </div>
@@ -117,11 +117,11 @@ const Categories: React.FC = () => {
         </div>
 
         {/* Team Formation Info */}
-        <div className="bg-gray-800 p-8 rounded-xl border border-red-600 mb-12">
-          <h3 className="text-3xl font-bold text-white mb-6 text-center">
+        <div className="card mb-12">
+          <h3 className="section-title text-center">
             Team Formation
           </h3>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="grid grid-2">
             <div>
               <h4 className="text-xl font-bold text-white mb-4">
                 How Teams Work
@@ -172,7 +172,7 @@ const Categories: React.FC = () => {
         </div>
 
         {/* Important Note */}
-        <div className="bg-red-600/20 border border-red-600 rounded-lg p-6">
+        <div className="alert alert-warning">
           <div className="flex items-start space-x-4">
             <div className="text-2xl">⚠️</div>
             <div>

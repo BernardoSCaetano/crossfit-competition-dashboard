@@ -1,5 +1,10 @@
-// import { FaFacebook, FaInstagram } from "react-icons/fa";
+// // import { FaFacebook, FaInstagram } from "react-icons/fa";
 import "./App.css";
+import Categories from "./components/Categories";
+import CompetitionOverview from "./components/CompetitionOverview";
+import MovementStandards from "./components/MovementStandards";
+import Registration from "./components/Registration";
+import Sponsors from "./components/Sponsors";
 
 function App() {
   return (
@@ -58,88 +63,20 @@ function App() {
         </div>
       </section>
 
-      {/* Event Information Cards */}
-      <section className="info-section">
-        <div className="container">
-          <div className="section-header">
-            <h2 className="section-title">Event Information</h2>
-            <p className="section-subtitle">
-              Everything you need to know about the competition
-            </p>
-          </div>
+      {/* Competition Overview */}
+      <CompetitionOverview />
 
-          <div className="info-grid">
-            <div className="info-card">
-              <div className="card-icon">📅</div>
-              <h3 className="card-title">Event Details</h3>
-              <div className="card-content">
-                <div className="info-item">
-                  <span className="info-label">Date</span>
-                  <span className="info-value">November 1st, 2025</span>
-                </div>
-                <div className="info-item">
-                  <span className="info-label">Time</span>
-                  <span className="info-value">06:45 - 18:00</span>
-                </div>
-                <div className="info-item">
-                  <span className="info-label">Location</span>
-                  <span className="info-value">CrossFit Black Edition</span>
-                </div>
-                <div className="info-item">
-                  <span className="info-label">Format</span>
-                  <span className="info-value">3 WODs + Final</span>
-                </div>
-              </div>
-            </div>
+      {/* Categories */}
+      <Categories />
 
-            <div className="info-card">
-              <div className="card-icon">🏆</div>
-              <h3 className="card-title">Categories</h3>
-              <div className="card-content">
-                <div className="category-item">
-                  <span className="category-name">RX+</span>
-                  <span className="category-level">Professional</span>
-                </div>
-                <div className="category-item">
-                  <span className="category-name">RX</span>
-                  <span className="category-level">Competitive</span>
-                </div>
-                <div className="category-item">
-                  <span className="category-name">Performance</span>
-                  <span className="category-level">Intermediate</span>
-                </div>
-                <div className="category-item">
-                  <span className="category-name">Rookie</span>
-                  <span className="category-level">Beginner</span>
-                </div>
-              </div>
-            </div>
+      {/* Movement Standards */}
+      <MovementStandards />
 
-            <div className="info-card">
-              <div className="card-icon">👥</div>
-              <h3 className="card-title">Team Formation</h3>
-              <div className="card-content">
-                <div className="info-item">
-                  <span className="info-label">Team Size</span>
-                  <span className="info-value">3 athletes</span>
-                </div>
-                <div className="info-item">
-                  <span className="info-label">Types</span>
-                  <span className="info-value">Men's, Women's & Mixed</span>
-                </div>
-                <div className="info-item">
-                  <span className="info-label">Price</span>
-                  <span className="info-value">€17 + T-Shirt</span>
-                </div>
-                <div className="info-item">
-                  <span className="info-label">Early Bird</span>
-                  <span className="info-value">Until Oct 20th</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      {/* Registration */}
+      <Registration />
+
+      {/* Sponsors */}
+      <Sponsors />
 
       {/* Membership Plans Section */}
       {/* <section className="plans-section">
