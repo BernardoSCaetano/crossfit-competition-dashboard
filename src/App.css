@@ -697,6 +697,14 @@ body {
   color: #dc2626;
 }
 
+.footer-credit {
+  color: #6b7280;
+  font-size: 0.8rem;
+  font-style: italic;
+  margin-top: 0.5rem;
+  opacity: 0.8;
+}
+
 /* Responsive Design */
 @media (max-width: 1024px) {
   .contact-content {

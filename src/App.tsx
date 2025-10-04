@@ -300,6 +300,9 @@ function App() {
               <p>
                 Hosted on <strong>crossfitblackedition.games</strong>
               </p>
+              <p className="footer-credit">
+                (Blame Bernardo Caetano, athlete of this awesome box)
+              </p>
             </div>
           </div>
         </div>
