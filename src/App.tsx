@@ -1,4 +1,4 @@
-// import { FaFacebook, FaInstagram } from "react-icons/fa";
+import { FaFacebook, FaInstagram } from "react-icons/fa";
 import "./App.css";
 
 function App() {
@@ -21,13 +21,9 @@ function App() {
           </header>
 
           <div className="hero-content">
-            <div className="hero-badge">
-              <span className="badge-text">GAMES 2025</span>
-            </div>
-
             <h1 className="hero-title">
               CrossFit Black Edition
-              <span className="title-accent">Games</span>
+              <span className="title-accent">Games 2025</span>
             </h1>
 
             <p className="hero-subtitle">November 1st, 2025</p>
@@ -236,7 +232,7 @@ function App() {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <div className="social-icon">📋</div>
+                <div className="social-icon">🏋️‍♂️</div>
                 <div className="social-content">
                   <span className="social-name">Membership/Planos</span>
                   <span className="social-handle">View Plans</span>
@@ -252,7 +248,7 @@ function App() {
                   )
                 }
               >
-                <div className="social-icon">📘</div>
+                <div className="social-icon">{FaFacebook({})}</div>
                 <div className="social-content">
                   <span className="social-name">Facebook</span>
                   <span className="social-handle">@crossfitblackedition</span>
@@ -268,7 +264,7 @@ function App() {
                   )
                 }
               >
-                <div className="social-icon">📷</div>
+                <div className="social-icon">{FaInstagram({})}</div>
                 <div className="social-content">
                   <span className="social-name">Instagram</span>
                   <span className="social-handle">@crossfitblackedition</span>
@@ -297,9 +293,6 @@ function App() {
 
             <div className="footer-info">
               <p>© 2025 CrossFit Black Edition Games. All rights reserved.</p>
-              <p>
-                Hosted on <strong>crossfitblackedition.games</strong>
-              </p>
               <p className="footer-credit">
                 (Blame Bernardo Caetano, athlete of this awesome box)
               </p>
