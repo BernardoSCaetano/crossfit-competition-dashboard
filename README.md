@@ -1,46 +1,81 @@
-# Getting Started with Create React App
+# CrossFit Black Edition Games Dashboard
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A React-based dashboard for the CrossFit Black Edition Games 2025 competition.
 
-## Available Scripts
+## 🏷️ Versions
 
-In the project directory, you can run:
+### Version 0.1 - Full Dashboard (Master Branch)
+- Complete competition dashboard with all features
+- Registration form with TypeScript
+- Movement standards table
+- Categories breakdown
+- Sponsors section
+- Responsive design
+- Custom CSS utility system (no external dependencies)
 
-### `npm start`
+### Version 0.0.1 - Demo Landing Page (Current Branch: demo-landing-v0.0.1)
+- Simple landing page for quick demo
+- Event information and dates
+- Social media links
+- Links to main website (crossfitblackedition.pt)
+- Clean, minimal design
+- Perfect for crossfitblackedition.games placeholder
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## 🚀 Getting Started
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+### Prerequisites
+- Node.js (v14 or higher)
+- npm or yarn
 
-### `npm test`
+### Installation
+```bash
+npm install
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Development
+```bash
+npm start
+```
+Opens [http://localhost:3000](http://localhost:3000) in your browser.
 
-### `npm run build`
+### Building for Production
+```bash
+npm run build
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## 🔄 Switching Between Versions
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### To use Full Dashboard (v0.1):
+```bash
+git checkout master
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### To use Demo Landing Page (v0.0.1):
+```bash
+git checkout demo-landing-v0.0.1
+```
 
-### `npm run eject`
+## 🌐 Deployment
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+### For crossfitblackedition.games (Demo Landing Page):
+- Use the `demo-landing-v0.0.1` branch
+- Simple, fast-loading landing page
+- Links to main website for full functionality
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### For Full Dashboard:
+- Use the `master` branch
+- Complete competition management system
+- All features and functionality included
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## 📱 Features
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+- **Responsive Design**: Works on all devices
+- **Modern UI**: Clean, professional design
+- **Fast Loading**: Optimized for performance
+- **Accessibility**: WCAG compliant
+- **TypeScript**: Type-safe development
+- **No External Dependencies**: Stable and reliable
 
-## Learn More
+## 🎯 Purpose
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+This project serves as both a demo landing page and a full competition dashboard for the CrossFit Black Edition Games 2025, providing a seamless experience for athletes and organizers.
