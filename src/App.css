@@ -633,20 +633,24 @@ body {
   background: #000000;
   border-top: 1px solid #374151;
   padding: 3rem 0;
+  margin-top: 2rem;
 }
 
 .footer-content {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
   flex-wrap: wrap;
   gap: 2rem;
+  min-height: 80px;
 }
 
 .footer-brand {
   display: flex;
   align-items: center;
   gap: 1.5rem;
+  flex: 1;
+  min-width: 300px;
 }
 
 .footer-logo {
@@ -670,6 +674,11 @@ body {
 
 .footer-info {
   text-align: right;
+  flex: 1;
+  min-width: 250px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .footer-info p {
@@ -737,15 +746,18 @@ body {
   .footer-content {
     flex-direction: column;
     text-align: center;
+    gap: 1.5rem;
   }
 
   .footer-info {
     text-align: center;
+    min-width: auto;
   }
 
   .footer-brand {
     flex-direction: column;
     text-align: center;
+    min-width: auto;
   }
 }
 
