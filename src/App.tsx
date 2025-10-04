@@ -282,18 +282,11 @@ function App() {
       <footer className="footer">
         <div className="container">
           <div className="footer-content">
-            <div className="footer-brand">
-              <img
-                src="/crossfit-black-edition-logo.png"
-                alt="CrossFit Black Edition"
-                className="footer-logo"
-              />
-              <div className="footer-text">
-                <h3>CrossFit Black Edition</h3>
-                <p>GAMES 2025</p>
-              </div>
-            </div>
-
+            <img
+              src="/crossfit-black-edition-logo.png"
+              alt="CrossFit Black Edition"
+              className="footer-logo"
+            />
             <div className="footer-info">
               <p>© 2025 CrossFit Black Edition Games. All rights reserved.</p>
               <p>
