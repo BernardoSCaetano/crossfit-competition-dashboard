@@ -1,4 +1,4 @@
-import { FaFacebook, FaInstagram } from "react-icons/fa";
+// import { FaFacebook, FaInstagram } from "react-icons/fa";
 import "./App.css";
 
 function App() {
@@ -252,9 +252,7 @@ function App() {
                   )
                 }
               >
-                <div className="social-icon">
-                  <FaFacebook />
-                </div>
+                <div className="social-icon">📘</div>
                 <div className="social-content">
                   <span className="social-name">Facebook</span>
                   <span className="social-handle">@crossfitblackedition</span>
@@ -270,9 +268,7 @@ function App() {
                   )
                 }
               >
-                <div className="social-icon">
-                  <FaInstagram />
-                </div>
+                <div className="social-icon">📷</div>
                 <div className="social-content">
                   <span className="social-name">Instagram</span>
                   <span className="social-handle">@crossfitblackedition</span>
