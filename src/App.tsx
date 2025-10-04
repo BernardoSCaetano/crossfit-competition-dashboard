@@ -3,128 +3,212 @@ import "./App.css";
 function App() {
   return (
     <div className="App">
-      <header className="header">
+      {/* Hero Section with Parallax Background */}
+      <section className="hero-section">
+        <div className="hero-background"></div>
+        <div className="hero-overlay"></div>
+        
         <div className="container">
-          <div className="logo">
-            <h1>CROSSFIT</h1>
-            <div className="logo-subtitle">
-              <span>BLACK EDITION</span>
-              <span>GAMES 2025</span>
+          <header className="header">
+            <div className="logo-container">
+              <img 
+                src="/crossfit-black-edition-logo.png" 
+                alt="CrossFit Black Edition" 
+                className="logo-image"
+              />
+            </div>
+          </header>
+
+          <div className="hero-content">
+            <div className="hero-badge">
+              <span className="badge-text">GAMES 2025</span>
+            </div>
+            
+            <h1 className="hero-title">
+              CrossFit Black Edition
+              <span className="title-accent">Games</span>
+            </h1>
+            
+            <p className="hero-subtitle">November 1st, 2025</p>
+            
+            <p className="hero-description">
+              Join us for the ultimate CrossFit competition experience. 
+              Whether you're a beginner or elite athlete, there's a place for you 
+              in our community-driven event.
+            </p>
+            
+            <div className="cta-buttons">
+              <a 
+                href="https://crossfitblackedition.pt" 
+                className="btn btn-primary"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <span className="btn-icon">🌐</span>
+                Visit Main Website
+              </a>
+              <a 
+                href="https://crossfitblackedition.pt/registration" 
+                className="btn btn-secondary"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <span className="btn-icon">🏋️‍♂️</span>
+                Register Now
+              </a>
             </div>
           </div>
         </div>
-      </header>
+      </section>
 
-      <main className="main">
-        <section className="hero">
-          <div className="container">
-            <div className="hero-content">
-              <h2 className="hero-title">CrossFit Black Edition Games 2025</h2>
-              <p className="hero-subtitle">November 1st, 2025</p>
-              <p className="hero-description">
-                Join us for the ultimate CrossFit competition experience. 
-                Whether you're a beginner or elite athlete, there's a place for you 
-                in our community-driven event.
+      {/* Event Information Cards */}
+      <section className="info-section">
+        <div className="container">
+          <div className="section-header">
+            <h2 className="section-title">Event Information</h2>
+            <p className="section-subtitle">Everything you need to know about the competition</p>
+          </div>
+          
+          <div className="info-grid">
+            <div className="info-card">
+              <div className="card-icon">📅</div>
+              <h3 className="card-title">Event Details</h3>
+              <div className="card-content">
+                <div className="info-item">
+                  <span className="info-label">Date</span>
+                  <span className="info-value">November 1st, 2025</span>
+                </div>
+                <div className="info-item">
+                  <span className="info-label">Time</span>
+                  <span className="info-value">06:45 - 18:00</span>
+                </div>
+                <div className="info-item">
+                  <span className="info-label">Location</span>
+                  <span className="info-value">CrossFit Black Edition</span>
+                </div>
+                <div className="info-item">
+                  <span className="info-label">Format</span>
+                  <span className="info-value">3 WODs + Final</span>
+                </div>
+              </div>
+            </div>
+            
+            <div className="info-card">
+              <div className="card-icon">🏆</div>
+              <h3 className="card-title">Categories</h3>
+              <div className="card-content">
+                <div className="category-item">
+                  <span className="category-name">RX+</span>
+                  <span className="category-level">Professional</span>
+                </div>
+                <div className="category-item">
+                  <span className="category-name">RX</span>
+                  <span className="category-level">Competitive</span>
+                </div>
+                <div className="category-item">
+                  <span className="category-name">Performance</span>
+                  <span className="category-level">Intermediate</span>
+                </div>
+                <div className="category-item">
+                  <span className="category-name">Rookie</span>
+                  <span className="category-level">Beginner</span>
+                </div>
+              </div>
+            </div>
+            
+            <div className="info-card">
+              <div className="card-icon">👥</div>
+              <h3 className="card-title">Team Formation</h3>
+              <div className="card-content">
+                <div className="info-item">
+                  <span className="info-label">Team Size</span>
+                  <span className="info-value">3 athletes</span>
+                </div>
+                <div className="info-item">
+                  <span className="info-label">Types</span>
+                  <span className="info-value">Men's, Women's & Mixed</span>
+                </div>
+                <div className="info-item">
+                  <span className="info-label">Price</span>
+                  <span className="info-value">€17 + T-Shirt</span>
+                </div>
+                <div className="info-item">
+                  <span className="info-label">Early Bird</span>
+                  <span className="info-value">Until Oct 20th</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Contact & Social Section */}
+      <section className="contact-section">
+        <div className="container">
+          <div className="contact-content">
+            <div className="contact-info">
+              <h2 className="contact-title">Get Connected</h2>
+              <p className="contact-description">
+                Follow us for updates, training tips, and community highlights
               </p>
-              
-              <div className="cta-buttons">
-                <a 
-                  href="https://crossfitblackedition.pt" 
-                  className="btn btn-primary"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Visit Main Website
-                </a>
-                <a 
-                  href="https://crossfitblackedition.pt/registration" 
-                  className="btn btn-secondary"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Register Now
-                </a>
-              </div>
             </div>
-          </div>
-        </section>
-
-        <section className="info-section">
-          <div className="container">
-            <div className="info-grid">
-              <div className="info-card">
-                <h3>Event Details</h3>
-                <ul>
-                  <li><strong>Date:</strong> November 1st, 2025</li>
-                  <li><strong>Time:</strong> 06:45 - 18:00</li>
-                  <li><strong>Location:</strong> CrossFit Black Edition</li>
-                  <li><strong>Format:</strong> 3 WODs + Final</li>
-                </ul>
-              </div>
-              
-              <div className="info-card">
-                <h3>Categories</h3>
-                <ul>
-                  <li>RX+ (Professional)</li>
-                  <li>RX (Competitive)</li>
-                  <li>Performance (Intermediate)</li>
-                  <li>Rookie (Beginner)</li>
-                </ul>
-              </div>
-              
-              <div className="info-card">
-                <h3>Team Formation</h3>
-                <ul>
-                  <li>3 athletes per team</li>
-                  <li>Men's, Women's & Mixed</li>
-                  <li>€17 + T-Shirt</li>
-                  <li>Early bird until Oct 20th</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section className="social-section">
-          <div className="container">
-            <h2>Follow Us</h2>
+            
             <div className="social-links">
               <a 
                 href="https://crossfitblackedition.pt" 
-                className="social-link"
+                className="social-link primary"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                🌐 Website
+                <div className="social-icon">🌐</div>
+                <div className="social-content">
+                  <span className="social-name">Website</span>
+                  <span className="social-handle">crossfitblackedition.pt</span>
+                </div>
               </a>
-              <a 
-                href="#" 
+              
+              <button 
                 className="social-link"
-                target="_blank"
-                rel="noopener noreferrer"
+                onClick={() => window.open('https://facebook.com/crossfitblackedition', '_blank')}
               >
-                📘 Facebook
-              </a>
-              <a 
-                href="#" 
+                <div className="social-icon">📘</div>
+                <div className="social-content">
+                  <span className="social-name">Facebook</span>
+                  <span className="social-handle">@crossfitblackedition</span>
+                </div>
+              </button>
+              
+              <button 
                 className="social-link"
-                target="_blank"
-                rel="noopener noreferrer"
+                onClick={() => window.open('https://instagram.com/crossfitblackedition', '_blank')}
               >
-                📷 Instagram
-              </a>
+                <div className="social-icon">📷</div>
+                <div className="social-content">
+                  <span className="social-name">Instagram</span>
+                  <span className="social-handle">@crossfitblackedition</span>
+                </div>
+              </button>
             </div>
           </div>
-        </section>
-      </main>
+        </div>
+      </section>
 
+      {/* Footer */}
       <footer className="footer">
         <div className="container">
           <div className="footer-content">
-            <div className="footer-logo">
-              <h3>CROSSFIT BLACK EDITION</h3>
-              <p>GAMES 2025</p>
+            <div className="footer-brand">
+              <img 
+                src="/crossfit-black-edition-logo.png" 
+                alt="CrossFit Black Edition" 
+                className="footer-logo"
+              />
+              <div className="footer-text">
+                <h3>CrossFit Black Edition</h3>
+                <p>GAMES 2025</p>
+              </div>
             </div>
+            
             <div className="footer-info">
               <p>© 2025 CrossFit Black Edition Games. All rights reserved.</p>
               <p>Hosted on <strong>crossfitblackedition.games</strong></p>
