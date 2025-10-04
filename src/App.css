@@ -37,16 +37,29 @@ body {
 }
 
 /* Typography */
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-weight: 700;
   line-height: 1.2;
   margin-bottom: 1rem;
 }
 
-h1 { font-size: clamp(2.5rem, 5vw, 4rem); }
-h2 { font-size: clamp(2rem, 4vw, 3rem); }
-h3 { font-size: clamp(1.5rem, 3vw, 2rem); }
-h4 { font-size: clamp(1.25rem, 2.5vw, 1.5rem); }
+h1 {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+}
+h2 {
+  font-size: clamp(2rem, 4vw, 3rem);
+}
+h3 {
+  font-size: clamp(1.5rem, 3vw, 2rem);
+}
+h4 {
+  font-size: clamp(1.25rem, 2.5vw, 1.5rem);
+}
 
 p {
   margin-bottom: 1rem;
@@ -102,9 +115,15 @@ p {
 }
 
 @keyframes gradientShift {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 /* Header */
@@ -158,7 +177,11 @@ p {
 
 .title-accent {
   display: block;
-  background: linear-gradient(135deg, var(--primary-red), var(--secondary-orange));
+  background: linear-gradient(
+    135deg,
+    var(--primary-red),
+    var(--secondary-orange)
+  );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -232,7 +255,11 @@ p {
 }
 
 .btn-primary {
-  background: linear-gradient(135deg, var(--primary-red), var(--primary-red-dark));
+  background: linear-gradient(
+    135deg,
+    var(--primary-red),
+    var(--primary-red-dark)
+  );
   color: var(--text-white);
   box-shadow: 0 8px 25px rgba(220, 38, 38, 0.4);
 }
@@ -316,7 +343,11 @@ p {
   left: 0;
   right: 0;
   height: 4px;
-  background: linear-gradient(90deg, var(--primary-red), var(--secondary-orange));
+  background: linear-gradient(
+    90deg,
+    var(--primary-red),
+    var(--secondary-orange)
+  );
   transform: scaleX(0);
   transition: transform 0.3s ease;
 }
@@ -355,18 +386,34 @@ p {
   gap: 2rem;
 }
 
-.grid-1 { grid-template-columns: 1fr; }
-.grid-2 { grid-template-columns: repeat(2, 1fr); }
-.grid-3 { grid-template-columns: repeat(3, 1fr); }
-.grid-4 { grid-template-columns: repeat(4, 1fr); }
+.grid-1 {
+  grid-template-columns: 1fr;
+}
+.grid-2 {
+  grid-template-columns: repeat(2, 1fr);
+}
+.grid-3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+.grid-4 {
+  grid-template-columns: repeat(4, 1fr);
+}
 
 @media (max-width: 1024px) {
-  .grid-4 { grid-template-columns: repeat(2, 1fr); }
-  .grid-3 { grid-template-columns: repeat(2, 1fr); }
+  .grid-4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .grid-3 {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 @media (max-width: 768px) {
-  .grid-4, .grid-3, .grid-2 { grid-template-columns: 1fr; }
+  .grid-4,
+  .grid-3,
+  .grid-2 {
+    grid-template-columns: 1fr;
+  }
 }
 
 /* Dashboard Component Styles */
@@ -382,7 +429,12 @@ p {
   left: 0;
   right: 0;
   height: 1px;
-  background: linear-gradient(90deg, transparent, var(--primary-red), transparent);
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--primary-red),
+    transparent
+  );
 }
 
 /* Competition Overview Styles */
@@ -785,7 +837,12 @@ p {
   left: 0;
   right: 0;
   height: 1px;
-  background: linear-gradient(90deg, transparent, var(--primary-red), transparent);
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--primary-red),
+    transparent
+  );
 }
 
 .contact-content {
@@ -875,7 +932,11 @@ p {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(135deg, var(--primary-red), var(--primary-red-dark));
+  background: linear-gradient(
+    135deg,
+    var(--primary-red),
+    var(--primary-red-dark)
+  );
   border-radius: 12px;
   flex-shrink: 0;
   color: var(--text-white);
@@ -1129,8 +1190,18 @@ textarea:focus {
   animation: fadeInUp 0.8s ease-out forwards;
 }
 
-.hero-content > *:nth-child(1) { animation-delay: 0.1s; }
-.hero-content > *:nth-child(2) { animation-delay: 0.2s; }
-.hero-content > *:nth-child(3) { animation-delay: 0.3s; }
-.hero-content > *:nth-child(4) { animation-delay: 0.4s; }
-.hero-content > *:nth-child(5) { animation-delay: 0.5s; }
+.hero-content > *:nth-child(1) {
+  animation-delay: 0.1s;
+}
+.hero-content > *:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.hero-content > *:nth-child(3) {
+  animation-delay: 0.3s;
+}
+.hero-content > *:nth-child(4) {
+  animation-delay: 0.4s;
+}
+.hero-content > *:nth-child(5) {
+  animation-delay: 0.5s;
+}

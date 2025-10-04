@@ -113,28 +113,26 @@ const MovementStandards: React.FC = () => {
         );
 
   return (
-    <section id="standards" className="py-20 bg-gray-900">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+    <section id="standards" className="dashboard-section section-gray-900">
+      <div className="container">
+        <div className="section-header">
+          <h2 className="section-title">
             Movement Standards
           </h2>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+          <p className="section-subtitle">
             Detailed movement requirements for each category. Choose your level
             and see what's expected.
           </p>
         </div>
 
         {/* Category Filter */}
-        <div className="flex flex-wrap justify-center gap-4 mb-8">
+        <div className="filter-buttons">
           {categories.map((category) => (
             <button
               key={category.key}
               onClick={() => setSelectedCategory(category.key)}
-              className={`px-6 py-3 rounded-lg font-semibold transition-colors ${
-                selectedCategory === category.key
-                  ? `${category.color} text-white`
-                  : "bg-gray-700 text-gray-300 hover:bg-gray-600"
+              className={`filter-button ${
+                selectedCategory === category.key ? 'active' : ''
               }`}
             >
               {category.name}
@@ -143,10 +141,10 @@ const MovementStandards: React.FC = () => {
         </div>
 
         {/* Movement Standards Table */}
-        <div className="bg-gray-800 rounded-xl overflow-hidden border border-red-600">
+        <div className="standards-table">
           <div className="overflow-x-auto">
             <table className="w-full">
-              <thead className="bg-red-600">
+              <thead>
                 <tr>
                   <th className="px-6 py-4 text-left text-white font-bold text-lg">
                     MOVEMENTS
@@ -167,23 +165,18 @@ const MovementStandards: React.FC = () => {
               </thead>
               <tbody>
                 {filteredMovements.map((movement, index) => (
-                  <tr
-                    key={index}
-                    className={`${
-                      index % 2 === 0 ? "bg-gray-800" : "bg-gray-750"
-                    } hover:bg-gray-700 transition-colors`}
-                  >
+                  <tr key={index}>
                     <td className="px-6 py-4 text-white font-bold text-lg">
                       {movement.name}
                     </td>
                     <td className="px-6 py-4 text-center text-white">
                       <span
-                        className={`px-3 py-1 rounded-full text-sm ${
+                        className={`movement-badge ${
                           movement.rxPlus.includes("✓")
-                            ? "bg-green-600"
+                            ? "standard"
                             : movement.rxPlus.includes("*")
-                            ? "bg-yellow-600"
-                            : "bg-gray-600"
+                            ? "team-only"
+                            : "scaled"
                         }`}
                       >
                         {movement.rxPlus}
@@ -191,12 +184,12 @@ const MovementStandards: React.FC = () => {
                     </td>
                     <td className="px-6 py-4 text-center text-white">
                       <span
-                        className={`px-3 py-1 rounded-full text-sm ${
+                        className={`movement-badge ${
                           movement.rx.includes("✓")
-                            ? "bg-green-600"
+                            ? "standard"
                             : movement.rx.includes("*")
-                            ? "bg-yellow-600"
-                            : "bg-gray-600"
+                            ? "team-only"
+                            : "scaled"
                         }`}
                       >
                         {movement.rx}
@@ -204,12 +197,12 @@ const MovementStandards: React.FC = () => {
                     </td>
                     <td className="px-6 py-4 text-center text-white">
                       <span
-                        className={`px-3 py-1 rounded-full text-sm ${
+                        className={`movement-badge ${
                           movement.performance.includes("✓")
-                            ? "bg-green-600"
+                            ? "standard"
                             : movement.performance.includes("*")
-                            ? "bg-yellow-600"
-                            : "bg-gray-600"
+                            ? "team-only"
+                            : "scaled"
                         }`}
                       >
                         {movement.performance}
@@ -217,10 +210,10 @@ const MovementStandards: React.FC = () => {
                     </td>
                     <td className="px-6 py-4 text-center text-white">
                       <span
-                        className={`px-3 py-1 rounded-full text-sm ${
+                        className={`movement-badge ${
                           movement.rookie.includes("✓")
-                            ? "bg-green-600"
-                            : "bg-gray-600"
+                            ? "standard"
+                            : "scaled"
                         }`}
                       >
                         {movement.rookie}
@@ -250,7 +243,7 @@ const MovementStandards: React.FC = () => {
         </div>
 
         {/* Important Note */}
-        <div className="mt-12 bg-red-600/20 border border-red-600 rounded-lg p-6">
+        <div className="mt-12 alert alert-warning">
           <div className="flex items-start space-x-4">
             <div className="text-2xl">⚠️</div>
             <div>
@@ -270,11 +263,11 @@ const MovementStandards: React.FC = () => {
         </div>
 
         {/* Weight Guidelines */}
-        <div className="mt-8 bg-gray-800 rounded-lg p-6 border border-gray-600">
+        <div className="mt-8 card">
           <h4 className="text-xl font-bold text-white mb-4">
             Weight Guidelines
           </h4>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="grid grid-2">
             <div>
               <h5 className="text-lg font-semibold text-red-400 mb-2">
                 Male Athletes
