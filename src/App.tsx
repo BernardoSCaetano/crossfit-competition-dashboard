@@ -6,12 +6,13 @@ import CompetitionOverview from "./components/CompetitionOverview";
 import MovementStandards from "./components/MovementStandards";
 import Registration from "./components/Registration";
 import Sponsors from "./components/Sponsors";
+import Admin from "./pages/Admin";
+import AuthBar from "./components/AuthBar";
 import Athlete from "./pages/Athlete";
 import Athletes from "./pages/Athletes";
 import Dashboard from "./pages/Dashboard";
 import FAQ from "./pages/FAQ";
 import Movements from "./pages/Movements";
-import Admin from "./pages/Admin";
 import Rules from "./pages/Rules";
 import WodDetail from "./pages/WodDetail";
 import Wods from "./pages/Wods";
@@ -97,6 +98,7 @@ function App() {
                 Register Now
               </a> */}
             </div>
+            <AuthBar />
           </div>
         </div>
       </section>

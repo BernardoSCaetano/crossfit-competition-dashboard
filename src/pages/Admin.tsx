@@ -1,8 +1,26 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { supabase } from "../lib/supabaseClient";
 
 const Admin: React.FC = () => {
-  const [form, setForm] = useState({ athlete_id: "", wod_id: "", score_value: "", rank: "", notes: "" });
+  const [form, setForm] = useState({
+    athlete_id: "",
+    wod_id: "",
+    score_value: "",
+    rank: "",
+    notes: "",
+  });
   const [status, setStatus] = useState<string>("");
+  const [isJudge, setIsJudge] = useState<boolean>(false);
+
+  useEffect(() => {
+    (async () => {
+      const { data } = await supabase.auth.getUser();
+      if (!data.user) return;
+      // Check if user has a judges row (requires policy allowing self-select)
+      const { data: judgeRow } = await supabase.from("judges").select("user_id").single();
+      setIsJudge(!!judgeRow);
+    })();
+  }, []);
 
   const submit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -10,7 +28,11 @@ const Admin: React.FC = () => {
     try {
       const res = await fetch("/api/scores/upsert", {
         method: "POST",
-        headers: { "Content-Type": "application/json", "x-admin-key": (process.env.REACT_APP_ADMIN_WRITE_KEY as string) ?? "" },
+        headers: {
+          "Content-Type": "application/json",
+          "x-admin-key":
+            (process.env.REACT_APP_ADMIN_WRITE_KEY as string) ?? "",
+        },
         body: JSON.stringify({
           athlete_id: form.athlete_id,
           wod_id: form.wod_id,
@@ -27,7 +49,9 @@ const Admin: React.FC = () => {
     }
   };
 
-  const onChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const onChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     setForm((f) => ({ ...f, [e.target.name]: e.target.value }));
   };
 
@@ -39,24 +63,72 @@ const Admin: React.FC = () => {
           <p className="section-subtitle">Temporary form to upsert scores</p>
         </div>
 
-        <form onSubmit={submit} className="registration-form" style={{ maxWidth: 720 }}>
+        {!isJudge && (
+          <div className="alert alert-warning" style={{ marginBottom: 16 }}>
+            You must be signed in as a judge to submit scores.
+          </div>
+        )}
+
+        <form
+          onSubmit={submit}
+          className="registration-form"
+          style={{ maxWidth: 720 }}
+        >
           <label className="form-label">Athlete ID</label>
-          <input className="form-input" name="athlete_id" value={form.athlete_id} onChange={onChange} required />
+          <input
+            className="form-input"
+            name="athlete_id"
+            value={form.athlete_id}
+            onChange={onChange}
+            required
+          />
 
-          <label className="form-label" style={{ marginTop: 12 }}>WOD ID</label>
-          <input className="form-input" name="wod_id" value={form.wod_id} onChange={onChange} required />
+          <label className="form-label" style={{ marginTop: 12 }}>
+            WOD ID
+          </label>
+          <input
+            className="form-input"
+            name="wod_id"
+            value={form.wod_id}
+            onChange={onChange}
+            required
+          />
 
-          <label className="form-label" style={{ marginTop: 12 }}>Score Value</label>
-          <input className="form-input" name="score_value" value={form.score_value} onChange={onChange} required />
+          <label className="form-label" style={{ marginTop: 12 }}>
+            Score Value
+          </label>
+          <input
+            className="form-input"
+            name="score_value"
+            value={form.score_value}
+            onChange={onChange}
+            required
+          />
 
-          <label className="form-label" style={{ marginTop: 12 }}>Rank (optional)</label>
-          <input className="form-input" name="rank" value={form.rank} onChange={onChange} />
+          <label className="form-label" style={{ marginTop: 12 }}>
+            Rank (optional)
+          </label>
+          <input
+            className="form-input"
+            name="rank"
+            value={form.rank}
+            onChange={onChange}
+          />
 
-          <label className="form-label" style={{ marginTop: 12 }}>Notes (optional)</label>
-          <textarea className="form-textarea" name="notes" value={form.notes} onChange={onChange} />
+          <label className="form-label" style={{ marginTop: 12 }}>
+            Notes (optional)
+          </label>
+          <textarea
+            className="form-textarea"
+            name="notes"
+            value={form.notes}
+            onChange={onChange}
+          />
 
           <div style={{ marginTop: 16 }}>
-            <button className="btn btn-primary" type="submit">Save Score</button>
+            <button className="btn btn-primary" type="submit">
+              Save Score
+            </button>
           </div>
           {status && <p style={{ marginTop: 12 }}>{status}</p>}
         </form>
@@ -66,5 +138,3 @@ const Admin: React.FC = () => {
 };
 
 export default Admin;
-
-

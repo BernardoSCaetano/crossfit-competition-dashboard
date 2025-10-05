@@ -35,3 +35,37 @@ Owner actions (in order):
 - Athlete search filters (category/team)
 - WOD release schedule & countdowns
 - Share card export on Athlete/WOD pages
+
+---
+Providers in use
+- Frontend hosting: Vercel (static React app + serverless API at /api/scores/upsert)
+- Backend/data: Supabase (managed Postgres + RLS). No other providers used.
+
+Current auth state (temporary)
+- Public reads enabled via RLS on wods/teams/athletes/scores (read-only).
+- Writes go through /api/scores/upsert using SUPABASE_SERVICE_ROLE_KEY and a header ADMIN_WRITE_KEY. This is for staging only—replace as below before production.
+
+Production readiness checklist (before going live)
+1) Replace header secret with real auth
+   - Enable Supabase Auth (email magic link) and create judge/admin users.
+   - Add table judges(user_id uuid primary key).
+   - Add RLS policies so only judges can insert/update scores.
+   - Update /api/scores/upsert to verify Supabase JWT (Authorization: Bearer <token>) and check judges membership. Remove ADMIN_WRITE_KEY and REACT_APP_ADMIN_WRITE_KEY.
+2) Lock down RLS precisely
+   - Keep public SELECT on leaderboard views; restrict sensitive fields if needed.
+   - Ensure UPDATE/INSERT/DELETE are denied by default unless policy permits.
+3) Secrets & environments
+   - Use separate Supabase projects or DB schemas for dev/prod.
+   - Rotate SUPABASE_SERVICE_ROLE_KEY and ADMIN_WRITE_KEY after testing.
+   - Ensure only serverless uses the service key; never expose it to the browser.
+4) API hygiene
+   - Add basic body validation, rate limiting (via middleware or edge), and CORS restrictions for /api routes.
+   - Add structured logs for writes (who/when/what).
+5) Operational checks
+   - Set up Supabase backups and point-in-time recovery (PITR).
+   - Add monitoring/alerts on Vercel and Supabase usage/errors.
+6) Data model finalization
+   - Confirm scoring types (time/reps/load), caps, tie-breaks columns.
+   - Add indexes on (wod_id, rank) and (athlete_id, wod_id).
+7) UI gating
+   - Hide /admin behind auth guard; remove from nav; keep a direct link only for judges.
