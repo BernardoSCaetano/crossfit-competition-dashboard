@@ -1,10 +1,14 @@
 // // import { FaFacebook, FaInstagram } from "react-icons/fa";
 import "./App.css";
+import { Routes, Route, Link, Navigate } from "react-router-dom";
 import Categories from "./components/Categories";
 import CompetitionOverview from "./components/CompetitionOverview";
 import MovementStandards from "./components/MovementStandards";
 import Registration from "./components/Registration";
 import Sponsors from "./components/Sponsors";
+import Dashboard from "./pages/Dashboard";
+import Wods from "./pages/Wods";
+import Athlete from "./pages/Athlete";
 
 function App() {
   return (
@@ -15,6 +19,7 @@ function App() {
         <div className="hero-overlay"></div>
 
         <div className="container">
+          {/* Keep header consistent across pages */}
           <header className="header">
             <div className="logo-container">
               <img
@@ -23,6 +28,14 @@ function App() {
                 className="logo-image"
               />
             </div>
+            <nav style={{ display: "flex", gap: "0.75rem", justifyContent: "center", marginTop: "0.5rem" }}>
+              <Link className="btn btn-secondary" to="/">Home</Link>
+              <Link className="btn btn-secondary" to="/dashboard">Dashboard</Link>
+              <Link className="btn btn-secondary" to="/wods">WODs</Link>
+              <Link className="btn btn-secondary" to="/categories">Categories</Link>
+              <Link className="btn btn-secondary" to="/rules">Rules</Link>
+              <Link className="btn btn-secondary" to="/faq">FAQ</Link>
+            </nav>
           </header>
 
           <div className="hero-content">
@@ -63,20 +76,25 @@ function App() {
         </div>
       </section>
 
-      {/* Competition Overview */}
-      <CompetitionOverview />
-
-      {/* Categories */}
-      <Categories />
-
-      {/* Movement Standards */}
-      <MovementStandards />
-
-      {/* Registration */}
-      <Registration />
-
-      {/* Sponsors */}
-      <Sponsors />
+      {/* Routed content */}
+      <Routes>
+        <Route path="/" element={
+          <>
+            <CompetitionOverview />
+            <Categories />
+            <MovementStandards />
+            <Registration />
+            <Sponsors />
+          </>
+        } />
+        <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/wods" element={<Wods />} />
+        <Route path="/athlete/:id" element={<Athlete />} />
+        <Route path="/categories" element={<Categories />} />
+        <Route path="/rules" element={<CompetitionOverview />} />
+        <Route path="/faq" element={<Sponsors />} />
+        <Route path="*" element={<Navigate to="/" replace />} />
+      </Routes>
 
       {/* Membership Plans Section */}
       {/* <section className="plans-section">

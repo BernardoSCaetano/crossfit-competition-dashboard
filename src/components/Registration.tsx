@@ -83,11 +83,9 @@ const Registration: React.FC = () => {
 
   return (
     <section id="registration" className="dashboard-section section-black">
-      <div className="container" style={{maxWidth: '1000px'}}>
+      <div className="container" style={{ maxWidth: "1000px" }}>
         <div className="section-header">
-          <h2 className="section-title">
-            Team Registration
-          </h2>
+          <h2 className="section-title">Team Registration</h2>
           <p className="section-subtitle">
             Register your team for the CrossFit Black Edition Games 2025.
             Complete the form below and visit reception to finalize your
@@ -97,7 +95,10 @@ const Registration: React.FC = () => {
 
         {/* Registration Info Cards */}
         <div className="grid grid-3 mb-12">
-          <div className="info-card" style={{background: 'var(--primary-red)'}}>
+          <div
+            className="info-card"
+            style={{ background: "var(--primary-red)" }}
+          >
             <div className="info-card-icon">💰</div>
             <h3 className="info-card-title">Early Bird</h3>
             <p className="info-card-value">€17 + T-Shirt</p>
@@ -127,9 +128,7 @@ const Registration: React.FC = () => {
               </h3>
               <div className="grid grid-2">
                 <div className="form-group">
-                  <label className="form-label">
-                    Team Name *
-                  </label>
+                  <label className="form-label">Team Name *</label>
                   <input
                     type="text"
                     name="teamName"
@@ -141,9 +140,7 @@ const Registration: React.FC = () => {
                   />
                 </div>
                 <div className="form-group">
-                  <label className="form-label">
-                    Category *
-                  </label>
+                  <label className="form-label">Category *</label>
                   <select
                     name="category"
                     value={formData.category}
@@ -159,10 +156,8 @@ const Registration: React.FC = () => {
                     ))}
                   </select>
                 </div>
-                <div className="form-group" style={{gridColumn: '1 / -1'}}>
-                  <label className="form-label">
-                    Team Type *
-                  </label>
+                <div className="form-group" style={{ gridColumn: "1 / -1" }}>
+                  <label className="form-label">Team Type *</label>
                   <select
                     name="teamType"
                     value={formData.teamType}
@@ -189,14 +184,10 @@ const Registration: React.FC = () => {
               <div className="space-y-8">
                 {[1, 2, 3].map((athleteNum) => (
                   <div key={athleteNum} className="athlete-card">
-                    <h4 className="athlete-title">
-                      Athlete {athleteNum}
-                    </h4>
+                    <h4 className="athlete-title">Athlete {athleteNum}</h4>
                     <div className="grid grid-3">
                       <div className="form-group">
-                        <label className="form-label">
-                          Full Name *
-                        </label>
+                        <label className="form-label">Full Name *</label>
                         <input
                           type="text"
                           name={`athlete${athleteNum}.name`}
@@ -214,9 +205,7 @@ const Registration: React.FC = () => {
                         />
                       </div>
                       <div className="form-group">
-                        <label className="form-label">
-                          Email *
-                        </label>
+                        <label className="form-label">Email *</label>
                         <input
                           type="email"
                           name={`athlete${athleteNum}.email`}
@@ -234,9 +223,7 @@ const Registration: React.FC = () => {
                         />
                       </div>
                       <div className="form-group">
-                        <label className="form-label">
-                          T-Shirt Size *
-                        </label>
+                        <label className="form-label">T-Shirt Size *</label>
                         <select
                           name={`athlete${athleteNum}.tshirt`}
                           value={
@@ -266,9 +253,7 @@ const Registration: React.FC = () => {
 
             {/* Additional Notes */}
             <div className="form-group">
-              <label className="form-label">
-                Additional Notes
-              </label>
+              <label className="form-label">Additional Notes</label>
               <textarea
                 name="notes"
                 value={formData.notes}
@@ -299,7 +284,10 @@ const Registration: React.FC = () => {
                 type="submit"
                 disabled={isSubmitting}
                 className="btn btn-primary"
-                style={{opacity: isSubmitting ? 0.6 : 1, cursor: isSubmitting ? 'not-allowed' : 'pointer'}}
+                style={{
+                  opacity: isSubmitting ? 0.6 : 1,
+                  cursor: isSubmitting ? "not-allowed" : "pointer",
+                }}
               >
                 {isSubmitting ? "Submitting..." : "Submit Registration"}
               </button>

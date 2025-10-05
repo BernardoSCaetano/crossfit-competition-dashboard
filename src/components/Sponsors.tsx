@@ -54,9 +54,7 @@ const Sponsors: React.FC = () => {
     <section id="sponsors" className="dashboard-section section-gray-900">
       <div className="container">
         <div className="section-header">
-          <h2 className="section-title">
-            Sponsors & Partners
-          </h2>
+          <h2 className="section-title">Sponsors & Partners</h2>
           <p className="section-subtitle">
             Thank you to our amazing sponsors who make this event possible
           </p>
@@ -65,17 +63,10 @@ const Sponsors: React.FC = () => {
         {/* Sponsors Grid */}
         <div className="grid grid-3 mb-16">
           {sponsors.map((sponsor, index) => (
-            <div
-              key={index}
-              className="sponsor-card"
-            >
+            <div key={index} className="sponsor-card">
               <div className="sponsor-logo">{sponsor.logo}</div>
-              <h3 className="sponsor-name">
-                {sponsor.name}
-              </h3>
-              <p className="sponsor-category">
-                {sponsor.category}
-              </p>
+              <h3 className="sponsor-name">{sponsor.name}</h3>
+              <p className="sponsor-category">{sponsor.category}</p>
               <p className="sponsor-description">{sponsor.description}</p>
             </div>
           ))}
@@ -112,14 +103,9 @@ const Sponsors: React.FC = () => {
 
         <div className="grid grid-3">
           {amenities.map((amenity, index) => (
-            <div
-              key={index}
-              className="amenity-card"
-            >
+            <div key={index} className="amenity-card">
               <div className="amenity-icon">{amenity.icon}</div>
-              <h4 className="amenity-title">
-                {amenity.title}
-              </h4>
+              <h4 className="amenity-title">{amenity.title}</h4>
               <p className="amenity-description">{amenity.description}</p>
             </div>
           ))}
