@@ -1,14 +1,19 @@
 // // import { FaFacebook, FaInstagram } from "react-icons/fa";
+import { Link, Navigate, Route, Routes } from "react-router-dom";
 import "./App.css";
-import { Routes, Route, Link, Navigate } from "react-router-dom";
 import Categories from "./components/Categories";
 import CompetitionOverview from "./components/CompetitionOverview";
 import MovementStandards from "./components/MovementStandards";
 import Registration from "./components/Registration";
 import Sponsors from "./components/Sponsors";
+import Athlete from "./pages/Athlete";
 import Dashboard from "./pages/Dashboard";
 import Wods from "./pages/Wods";
-import Athlete from "./pages/Athlete";
+import Athletes from "./pages/Athletes";
+import WodDetail from "./pages/WodDetail";
+import Rules from "./pages/Rules";
+import FAQ from "./pages/FAQ";
+import Movements from "./pages/Movements";
 
 function App() {
   return (
@@ -28,13 +33,32 @@ function App() {
                 className="logo-image"
               />
             </div>
-            <nav style={{ display: "flex", gap: "0.75rem", justifyContent: "center", marginTop: "0.5rem" }}>
-              <Link className="btn btn-secondary" to="/">Home</Link>
-              <Link className="btn btn-secondary" to="/dashboard">Dashboard</Link>
-              <Link className="btn btn-secondary" to="/wods">WODs</Link>
-              <Link className="btn btn-secondary" to="/categories">Categories</Link>
-              <Link className="btn btn-secondary" to="/rules">Rules</Link>
-              <Link className="btn btn-secondary" to="/faq">FAQ</Link>
+            <nav
+              style={{
+                display: "flex",
+                gap: "0.75rem",
+                justifyContent: "center",
+                marginTop: "0.5rem",
+              }}
+            >
+              <Link className="btn btn-secondary" to="/">
+                Home
+              </Link>
+              <Link className="btn btn-secondary" to="/dashboard">
+                Dashboard
+              </Link>
+              <Link className="btn btn-secondary" to="/wods">
+                WODs
+              </Link>
+              <Link className="btn btn-secondary" to="/categories">
+                Categories
+              </Link>
+              <Link className="btn btn-secondary" to="/rules">
+                Rules
+              </Link>
+              <Link className="btn btn-secondary" to="/faq">
+                FAQ
+              </Link>
             </nav>
           </header>
 
@@ -78,21 +102,27 @@ function App() {
 
       {/* Routed content */}
       <Routes>
-        <Route path="/" element={
-          <>
-            <CompetitionOverview />
-            <Categories />
-            <MovementStandards />
-            <Registration />
-            <Sponsors />
-          </>
-        } />
+        <Route
+          path="/"
+          element={
+            <>
+              <CompetitionOverview />
+              <Categories />
+              <MovementStandards />
+              <Registration />
+              <Sponsors />
+            </>
+          }
+        />
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/wods" element={<Wods />} />
+        <Route path="/wods/:id" element={<WodDetail />} />
+        <Route path="/athletes" element={<Athletes />} />
         <Route path="/athlete/:id" element={<Athlete />} />
         <Route path="/categories" element={<Categories />} />
-        <Route path="/rules" element={<CompetitionOverview />} />
-        <Route path="/faq" element={<Sponsors />} />
+        <Route path="/rules" element={<Rules />} />
+        <Route path="/faq" element={<FAQ />} />
+        <Route path="/movements" element={<Movements />} />
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
 
