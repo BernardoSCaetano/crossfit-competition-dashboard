@@ -7,13 +7,13 @@ import MovementStandards from "./components/MovementStandards";
 import Registration from "./components/Registration";
 import Sponsors from "./components/Sponsors";
 import Athlete from "./pages/Athlete";
-import Dashboard from "./pages/Dashboard";
-import Wods from "./pages/Wods";
 import Athletes from "./pages/Athletes";
-import WodDetail from "./pages/WodDetail";
-import Rules from "./pages/Rules";
+import Dashboard from "./pages/Dashboard";
 import FAQ from "./pages/FAQ";
 import Movements from "./pages/Movements";
+import Rules from "./pages/Rules";
+import WodDetail from "./pages/WodDetail";
+import Wods from "./pages/Wods";
 
 function App() {
   return (
