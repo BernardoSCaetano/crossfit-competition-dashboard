@@ -1,0 +1,37 @@
+Owner actions (in order):
+
+1) Create Supabase project (free tier ok)
+- Copy Project URL, anon key, and service role key.
+- Open SQL editor, paste contents of supabase/schema.sql and run.
+
+2) Configure environment variables
+- In Vercel project settings (and local .env):
+  REACT_APP_SUPABASE_URL=your_url
+  REACT_APP_SUPABASE_ANON_KEY=your_anon_key
+  SUPABASE_URL=your_url               # used by serverless API
+  SUPABASE_SERVICE_ROLE_KEY=service_key
+  ADMIN_WRITE_KEY=choose_a_strong_random_key
+  REACT_APP_ADMIN_WRITE_KEY=the_same_random_key  # temporary, for Admin page header
+
+3) Deploy
+- Push to feature/app-structure-dashboard (already set) to trigger Vercel.
+- Visit /dashboard, /wods, /athletes to verify public reads.
+
+4) Test secure write flow
+- Visit /admin (temporary page)
+- Insert a score using athlete_id + wod_id from your DB
+- Confirm score appears on athlete page or via DB console
+
+5) Data entry bootstrap
+- Insert baseline WODs and Athletes in Supabase (via Table Editor)
+- Optionally import CSVs for faster setup
+
+6) Security follow-ups (after initial validation)
+- Rotate ADMIN_WRITE_KEY and move to proper judge auth (Supabase Auth + RLS)
+- Add per-judge accounts and role-based policies
+
+7) Product polish
+- Leaderboards per category with sorting
+- Athlete search filters (category/team)
+- WOD release schedule & countdowns
+- Share card export on Athlete/WOD pages

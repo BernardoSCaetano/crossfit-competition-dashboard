@@ -11,6 +11,7 @@ import Athletes from "./pages/Athletes";
 import Dashboard from "./pages/Dashboard";
 import FAQ from "./pages/FAQ";
 import Movements from "./pages/Movements";
+import Admin from "./pages/Admin";
 import Rules from "./pages/Rules";
 import WodDetail from "./pages/WodDetail";
 import Wods from "./pages/Wods";
@@ -123,6 +124,7 @@ function App() {
         <Route path="/rules" element={<Rules />} />
         <Route path="/faq" element={<FAQ />} />
         <Route path="/movements" element={<Movements />} />
+        <Route path="/admin" element={<Admin />} />
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
 
