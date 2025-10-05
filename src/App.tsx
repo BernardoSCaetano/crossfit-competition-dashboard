@@ -1,19 +1,20 @@
 // // import { FaFacebook, FaInstagram } from "react-icons/fa";
 import { Link, Navigate, Route, Routes } from "react-router-dom";
 import "./App.css";
+import AuthBar from "./components/AuthBar";
 import Categories from "./components/Categories";
 import CompetitionOverview from "./components/CompetitionOverview";
 import MovementStandards from "./components/MovementStandards";
 import Registration from "./components/Registration";
 import Sponsors from "./components/Sponsors";
 import Admin from "./pages/Admin";
-import AuthBar from "./components/AuthBar";
 import Athlete from "./pages/Athlete";
 import Athletes from "./pages/Athletes";
 import Dashboard from "./pages/Dashboard";
 import FAQ from "./pages/FAQ";
 import Movements from "./pages/Movements";
 import Rules from "./pages/Rules";
+import Profile from "./pages/Profile";
 import WodDetail from "./pages/WodDetail";
 import Wods from "./pages/Wods";
 
@@ -127,6 +128,7 @@ function App() {
         <Route path="/faq" element={<FAQ />} />
         <Route path="/movements" element={<Movements />} />
         <Route path="/admin" element={<Admin />} />
+        <Route path="/me" element={<Profile />} />
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
 
