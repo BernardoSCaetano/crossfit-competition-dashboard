@@ -2,7 +2,14 @@ Owner actions (in order):
 
 1) Create Supabase project (free tier ok)
 - Copy Project URL, anon key, and service role key.
-- Open SQL editor, paste contents of supabase/schema.sql and run.
+- Open SQL editor and run, in order:
+  a) enable extension (usually already enabled on Supabase):
+     ```sql
+     create extension if not exists pgcrypto;
+     ```
+  b) supabase/schema.sql (tables + base RLS)
+  c) supabase/policies_judges.sql (judges table + judge write policies)
+  d) supabase/athletes_claim_and_policies.sql (unique indexes + claim RPC + self-update policy)
 
 2) Configure environment variables
 - In Vercel project settings (and local .env):
@@ -13,6 +20,12 @@ Owner actions (in order):
   ADMIN_WRITE_KEY=choose_a_strong_random_key
   REACT_APP_ADMIN_WRITE_KEY=the_same_random_key  # temporary, for Admin page header
 
+2.1) Supabase Auth settings (Dashboard → Authentication → Providers)
+- Enable Email (magic link/OTP)
+- Set SITE URL to your deployed domain (and/or Vercel preview URL)
+- Add authorized redirect URLs (your domain + preview) so magic links return to the app
+- (Prod) Configure custom SMTP/sender if you want branded emails; Supabase default mailer is fine for testing
+
 3) Deploy
 - Push to feature/app-structure-dashboard (already set) to trigger Vercel.
 - Visit /dashboard, /wods, /athletes to verify public reads.
@@ -22,6 +35,13 @@ Owner actions (in order):
 - Insert a score using athlete_id + wod_id from your DB
 - Confirm score appears on athlete page or via DB console
 
+4.1) Judge accounts
+- Create judge users by signing in (magic link) with judge emails
+- Insert their user_id into public.judges (Table Editor or SQL)
+  ```sql
+  insert into public.judges (user_id) values ('<judge_user_id>');
+  ```
+
 5) Data entry bootstrap
 - Insert baseline WODs and Athletes in Supabase (via Table Editor)
 - Optionally import CSVs for faster setup
@@ -29,6 +49,8 @@ Owner actions (in order):
 6) Security follow-ups (after initial validation)
 - Rotate ADMIN_WRITE_KEY and move to proper judge auth (Supabase Auth + RLS)
 - Add per-judge accounts and role-based policies
+- Remove header-based fallback in /api/scores/upsert once JWT flow is validated
+- Consider restricting athletes SELECT columns for public leaderboard views via a view + policy
 
 7) Product polish
 - Leaderboards per category with sorting

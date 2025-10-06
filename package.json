@@ -23,6 +23,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
+    "health:supabase": "node scripts/supabaseHealth.mjs",
+    "env:write": "node scripts/writeEnv.mjs",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {

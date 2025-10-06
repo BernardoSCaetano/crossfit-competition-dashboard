@@ -19,8 +19,14 @@ const AuthBar: React.FC = () => {
   const signIn = async (e: React.FormEvent) => {
     e.preventDefault();
     setStatus("Sending magic link...");
-    const { error } = await supabase.auth.signInWithOtp({ email });
-    setStatus(error ? `Error: ${error.message}` : "Check your email for the link.");
+    const redirectTo = `${window.location.origin}`; // works for Vercel previews and prod
+    const { error } = await supabase.auth.signInWithOtp({
+      email,
+      options: { emailRedirectTo: redirectTo },
+    });
+    setStatus(
+      error ? `Error: ${error.message}` : "Check your email for the link."
+    );
   };
 
   const signOut = async () => {
@@ -30,20 +36,41 @@ const AuthBar: React.FC = () => {
   if (user) {
     return (
       <div className="registration-form" style={{ marginTop: 12 }}>
-        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "space-between",
+            alignItems: "center",
+          }}
+        >
           <span>Signed in as {user.email}</span>
-          <button className="btn btn-secondary" onClick={signOut}>Sign out</button>
+          <button className="btn btn-secondary" onClick={signOut}>
+            Sign out
+          </button>
         </div>
       </div>
     );
   }
 
   return (
-    <form onSubmit={signIn} className="registration-form" style={{ marginTop: 12 }}>
+    <form
+      onSubmit={signIn}
+      className="registration-form"
+      style={{ marginTop: 12 }}
+    >
       <label className="form-label">Sign in (magic link)</label>
-      <input className="form-input" type="email" placeholder="you@example.com" value={email} onChange={(e)=>setEmail(e.target.value)} required />
+      <input
+        className="form-input"
+        type="email"
+        placeholder="you@example.com"
+        value={email}
+        onChange={(e) => setEmail(e.target.value)}
+        required
+      />
       <div style={{ marginTop: 8 }}>
-        <button className="btn btn-primary" type="submit">Send Link</button>
+        <button className="btn btn-primary" type="submit">
+          Send Link
+        </button>
       </div>
       {status && <p style={{ marginTop: 8 }}>{status}</p>}
     </form>
@@ -51,5 +78,3 @@ const AuthBar: React.FC = () => {
 };
 
 export default AuthBar;
-
-

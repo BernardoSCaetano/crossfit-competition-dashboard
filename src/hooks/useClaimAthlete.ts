@@ -13,5 +13,3 @@ export function useClaimAthlete() {
     run();
   }, []);
 }
-
-

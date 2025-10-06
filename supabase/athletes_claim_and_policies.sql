@@ -14,6 +14,7 @@ create or replace function public.claim_athlete_profile()
 returns void
 language plpgsql
 security definer
+set search_path = public
 as $$
 declare
   v_email text;
@@ -26,6 +27,9 @@ begin
    where lower(email) = lower(v_email) and user_id is null;
 end;
 $$;
+
+-- Ensure authenticated can execute the claim RPC
+grant execute on function public.claim_athlete_profile() to authenticated;
 
 -- Optionally, call from client via RPC (post-auth) or as a trigger after login using edge function
 

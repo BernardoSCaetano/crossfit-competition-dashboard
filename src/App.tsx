@@ -13,8 +13,8 @@ import Athletes from "./pages/Athletes";
 import Dashboard from "./pages/Dashboard";
 import FAQ from "./pages/FAQ";
 import Movements from "./pages/Movements";
-import Rules from "./pages/Rules";
 import Profile from "./pages/Profile";
+import Rules from "./pages/Rules";
 import WodDetail from "./pages/WodDetail";
 import Wods from "./pages/Wods";
 

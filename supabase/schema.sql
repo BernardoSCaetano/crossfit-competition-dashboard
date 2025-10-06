@@ -43,27 +43,33 @@ alter table public.scores enable row level security;
 alter table public.wods enable row level security;
 alter table public.teams enable row level security;
 
--- Policies
--- Public can read wods and teams
-create policy if not exists p_wods_select_public on public.wods
+-- Policies (Postgres does not support IF NOT EXISTS for CREATE POLICY)
+-- Drop then create to make the script idempotent
+drop policy if exists p_wods_select_public on public.wods;
+create policy p_wods_select_public on public.wods
 for select using (true);
 
-create policy if not exists p_teams_select_public on public.teams
+drop policy if exists p_teams_select_public on public.teams;
+create policy p_teams_select_public on public.teams
 for select using (true);
 
 -- Athletes: users can read their row; public can read names (for leaderboards)
-create policy if not exists p_athletes_select_public on public.athletes
+drop policy if exists p_athletes_select_public on public.athletes;
+create policy p_athletes_select_public on public.athletes
 for select using (true);
 
-create policy if not exists p_athletes_update_self on public.athletes
+drop policy if exists p_athletes_update_self on public.athletes;
+create policy p_athletes_update_self on public.athletes
 for update using (auth.uid() = user_id);
 
 -- Scores: public can read; only service role or judge role can insert/update (set via RPC or serverless)
-create policy if not exists p_scores_select_public on public.scores
+drop policy if exists p_scores_select_public on public.scores;
+create policy p_scores_select_public on public.scores
 for select using (true);
 
 -- For writes we will use server-side service key; optionally add role-based checks later
-create policy if not exists p_scores_write_deny_all on public.scores
+drop policy if exists p_scores_write_deny_all on public.scores;
+create policy p_scores_write_deny_all on public.scores
 for all to authenticated
 using (false) with check (false);
 
