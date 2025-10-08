@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import { supabase } from "../lib/supabaseClient";
 
 const AuthBar: React.FC = () => {
@@ -35,18 +36,25 @@ const AuthBar: React.FC = () => {
 
   if (user) {
     return (
-      <div className="registration-form" style={{ marginTop: 12 }}>
+      <div className="auth-user-bar" style={{ marginTop: 12 }}>
         <div
           style={{
             display: "flex",
             justifyContent: "space-between",
             alignItems: "center",
+            gap: "1rem",
+            flexWrap: "wrap",
           }}
         >
           <span>Signed in as {user.email}</span>
-          <button className="btn btn-secondary" onClick={signOut}>
-            Sign out
-          </button>
+          <div style={{ display: "flex", gap: "0.5rem" }}>
+            <Link className="btn btn-secondary" to="/me">
+              Profile
+            </Link>
+            <button className="btn btn-secondary" onClick={signOut}>
+              Sign out
+            </button>
+          </div>
         </div>
       </div>
     );

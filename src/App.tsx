@@ -1,11 +1,11 @@
 // // import { FaFacebook, FaInstagram } from "react-icons/fa";
-import { Link, Navigate, Route, Routes } from "react-router-dom";
+import { Navigate, Route, Routes } from "react-router-dom";
 import "./App.css";
 import AuthBar from "./components/AuthBar";
 import Categories from "./components/Categories";
 import CompetitionOverview from "./components/CompetitionOverview";
 import MovementStandards from "./components/MovementStandards";
-import Registration from "./components/Registration";
+import NavLink from "./components/NavLink";
 import Sponsors from "./components/Sponsors";
 import Admin from "./pages/Admin";
 import Athlete from "./pages/Athlete";
@@ -36,32 +36,28 @@ function App() {
                 className="logo-image"
               />
             </div>
-            <nav
-              style={{
-                display: "flex",
-                gap: "0.75rem",
-                justifyContent: "center",
-                marginTop: "0.5rem",
-              }}
-            >
-              <Link className="btn btn-secondary" to="/">
+            <nav className="main-nav">
+              <NavLink to="/">
                 Home
-              </Link>
-              <Link className="btn btn-secondary" to="/dashboard">
+              </NavLink>
+              <NavLink to="/dashboard">
                 Dashboard
-              </Link>
-              <Link className="btn btn-secondary" to="/wods">
+              </NavLink>
+              <NavLink to="/wods">
                 WODs
-              </Link>
-              <Link className="btn btn-secondary" to="/categories">
+              </NavLink>
+              <NavLink to="/athletes">
+                Athletes
+              </NavLink>
+              <NavLink to="/categories">
                 Categories
-              </Link>
-              <Link className="btn btn-secondary" to="/rules">
+              </NavLink>
+              <NavLink to="/rules">
                 Rules
-              </Link>
-              <Link className="btn btn-secondary" to="/faq">
+              </NavLink>
+              <NavLink to="/faq">
                 FAQ
-              </Link>
+              </NavLink>
             </nav>
           </header>
 
@@ -113,7 +109,6 @@ function App() {
               <CompetitionOverview />
               <Categories />
               <MovementStandards />
-              <Registration />
               <Sponsors />
             </>
           }
