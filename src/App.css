@@ -174,10 +174,15 @@ p {
   box-shadow: 0 2px 8px rgba(220, 38, 38, 0.4);
 }
 
+/* Main Content */
+.main-content {
+  min-height: 100vh;
+  padding-top: 120px; /* Account for fixed header */
+}
+
 /* Page Content */
 .page-content {
   min-height: 100vh;
-  padding-top: 120px; /* Account for fixed header */
   background: linear-gradient(135deg, #000000 0%, #1a1a1a 50%, #000000 100%);
 }
 
