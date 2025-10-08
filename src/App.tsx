@@ -2,14 +2,13 @@
 import { Navigate, Route, Routes } from "react-router-dom";
 import "./App.css";
 import AuthBar from "./components/AuthBar";
-import Categories from "./components/Categories";
 import CompetitionOverview from "./components/CompetitionOverview";
-import MovementStandards from "./components/MovementStandards";
 import NavLink from "./components/NavLink";
 import Sponsors from "./components/Sponsors";
 import Admin from "./pages/Admin";
 import Athlete from "./pages/Athlete";
 import Athletes from "./pages/Athletes";
+import CategoriesPage from "./pages/Categories";
 import Dashboard from "./pages/Dashboard";
 import FAQ from "./pages/FAQ";
 import Movements from "./pages/Movements";
@@ -37,27 +36,13 @@ function App() {
               />
             </div>
             <nav className="main-nav">
-              <NavLink to="/">
-                Home
-              </NavLink>
-              <NavLink to="/dashboard">
-                Dashboard
-              </NavLink>
-              <NavLink to="/wods">
-                WODs
-              </NavLink>
-              <NavLink to="/athletes">
-                Athletes
-              </NavLink>
-              <NavLink to="/categories">
-                Categories
-              </NavLink>
-              <NavLink to="/rules">
-                Rules
-              </NavLink>
-              <NavLink to="/faq">
-                FAQ
-              </NavLink>
+              <NavLink to="/">Home</NavLink>
+              <NavLink to="/dashboard">Dashboard</NavLink>
+              <NavLink to="/wods">WODs</NavLink>
+              <NavLink to="/athletes">Athletes</NavLink>
+              <NavLink to="/categories">Categories</NavLink>
+              <NavLink to="/rules">Rules</NavLink>
+              <NavLink to="/faq">FAQ</NavLink>
             </nav>
           </header>
 
@@ -107,8 +92,6 @@ function App() {
           element={
             <>
               <CompetitionOverview />
-              <Categories />
-              <MovementStandards />
               <Sponsors />
             </>
           }
@@ -118,7 +101,7 @@ function App() {
         <Route path="/wods/:id" element={<WodDetail />} />
         <Route path="/athletes" element={<Athletes />} />
         <Route path="/athlete/:id" element={<Athlete />} />
-        <Route path="/categories" element={<Categories />} />
+        <Route path="/categories" element={<CategoriesPage />} />
         <Route path="/rules" element={<Rules />} />
         <Route path="/faq" element={<FAQ />} />
         <Route path="/movements" element={<Movements />} />
