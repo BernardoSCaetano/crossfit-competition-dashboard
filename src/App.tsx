@@ -21,17 +21,17 @@ function App() {
   return (
     <div className="App">
       {/* Header - Always visible */}
-      <header className="header">
-        <div className="container">
-          <div className="header-bar">
-            <div className="logo-container">
+      <header className="fixed top-0 left-0 right-0 z-50 bg-black/90 backdrop-blur-md border-b border-white/10">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="flex items-center justify-between h-20 gap-4">
+            <div className="flex items-center">
               <img
                 src="/crossfit-black-edition-logo.png"
                 alt="CrossFit Black Edition"
-                className="logo-image"
+                className="h-12 w-auto"
               />
             </div>
-            <nav className="main-nav">
+            <nav className="hidden md:flex items-center space-x-1">
               <NavLink to="/">Home</NavLink>
               <NavLink to="/dashboard">Dashboard</NavLink>
               <NavLink to="/wods">WODs</NavLink>
@@ -40,7 +40,7 @@ function App() {
               <NavLink to="/rules">Rules</NavLink>
               <NavLink to="/faq">FAQ</NavLink>
             </nav>
-            <div className="header-auth">
+            <div className="flex items-center">
               <AuthBar />
             </div>
           </div>
@@ -48,36 +48,36 @@ function App() {
       </header>
 
       {/* Main content area */}
-      <main className="main-content">
+      <main className="pt-20 min-h-screen bg-gradient-to-br from-cf-black via-cf-gray-900 to-cf-black">
         <Routes>
           <Route
             path="/"
             element={
               <>
                 {/* Hero Section - Only on home page */}
-                <section className="hero-section">
-                  <div className="hero-background"></div>
-                  <div className="hero-overlay"></div>
-                  <div className="container">
-                    <div className="hero-content">
-                      <h1 className="hero-title">
+                <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-cf-black via-cf-gray-900 to-cf-black">
+                  <div className="absolute inset-0 bg-gradient-to-r from-cf-red/20 via-transparent to-cf-orange/20 animate-gradient-shift"></div>
+                  <div className="absolute inset-0 bg-black/40"></div>
+                  <div className="relative z-10 max-w-7xl mx-auto px-6 text-center">
+                    <div className="space-y-8">
+                      <h1 className="text-6xl md:text-8xl font-bold text-white leading-tight">
                         CrossFit Black Edition
-                        <span className="title-accent">Games 2025</span>
+                        <span className="block text-cf-red animate-float">Games 2025</span>
                       </h1>
-                      <p className="hero-subtitle">November 1st, 2025</p>
-                      <p className="hero-description">
-                        Join us for the ultimate CrossFit competition
-                        experience. Whether you're a beginner or elite athlete,
-                        there's a place for you in our community-driven event.
+                      <p className="text-2xl md:text-3xl text-cf-orange font-semibold">November 1st, 2025</p>
+                      <p className="text-xl md:text-2xl text-white/90 max-w-4xl mx-auto leading-relaxed">
+                        Join us for the ultimate CrossFit competition experience. Whether
+                        you're a beginner or elite athlete, there's a place for you in our
+                        community-driven event.
                       </p>
-                      <div className="cta-buttons">
+                      <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
                         <a
                           href="https://crossfitblackedition.pt"
-                          className="btn btn-primary"
+                          className="group inline-flex items-center px-8 py-4 bg-cf-red hover:bg-cf-red-dark text-white font-bold text-lg rounded-xl shadow-2xl shadow-cf-red/30 hover:shadow-cf-red/50 transition-all duration-300 hover:scale-105"
                           target="_blank"
                           rel="noopener noreferrer"
                         >
-                          <span className="btn-icon">🌐</span>
+                          <span className="mr-3 text-2xl group-hover:animate-bounce">🌐</span>
                           Visit Main Website
                         </a>
                       </div>
@@ -177,23 +177,23 @@ function App() {
       </main>
 
       {/* Footer - Always visible */}
-      <footer className="footer">
-        <div className="container">
-          <div className="footer-content">
-            <div className="footer-brand">
+      <footer className="bg-cf-gray-900 border-t border-white/10 py-12">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-8">
+            <div className="flex items-center space-x-4">
               <img
                 src="/crossfit-black-edition-logo.png"
                 alt="CrossFit Black Edition"
-                className="footer-logo"
+                className="h-16 w-auto"
               />
-              <div className="footer-text">
-                <h3>CrossFit Black Edition</h3>
-                <p>GAMES 2025</p>
+              <div className="text-white">
+                <h3 className="text-2xl font-bold">CrossFit Black Edition</h3>
+                <p className="text-cf-red font-semibold">GAMES 2025</p>
               </div>
             </div>
-            <div className="footer-info">
+            <div className="text-center md:text-right text-white/80">
               <p>© 2025 CrossFit Black Edition Games. All rights reserved.</p>
-              <p className="footer-credit">
+              <p className="text-sm text-white/60 mt-2">
                 (Blame Bernardo Caetano, athlete of this awesome box)
               </p>
             </div>
