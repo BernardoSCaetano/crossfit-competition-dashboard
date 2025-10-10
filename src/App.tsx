@@ -23,22 +23,27 @@ function App() {
       {/* Header - Always visible */}
       <header className="header">
         <div className="container">
-          <div className="logo-container">
-            <img
-              src="/crossfit-black-edition-logo.png"
-              alt="CrossFit Black Edition"
-              className="logo-image"
-            />
+          <div className="header-bar">
+            <div className="logo-container">
+              <img
+                src="/crossfit-black-edition-logo.png"
+                alt="CrossFit Black Edition"
+                className="logo-image"
+              />
+            </div>
+            <nav className="main-nav">
+              <NavLink to="/">Home</NavLink>
+              <NavLink to="/dashboard">Dashboard</NavLink>
+              <NavLink to="/wods">WODs</NavLink>
+              <NavLink to="/athletes">Athletes</NavLink>
+              <NavLink to="/categories">Categories</NavLink>
+              <NavLink to="/rules">Rules</NavLink>
+              <NavLink to="/faq">FAQ</NavLink>
+            </nav>
+            <div className="header-auth">
+              <AuthBar />
+            </div>
           </div>
-          <nav className="main-nav">
-            <NavLink to="/">Home</NavLink>
-            <NavLink to="/dashboard">Dashboard</NavLink>
-            <NavLink to="/wods">WODs</NavLink>
-            <NavLink to="/athletes">Athletes</NavLink>
-            <NavLink to="/categories">Categories</NavLink>
-            <NavLink to="/rules">Rules</NavLink>
-            <NavLink to="/faq">FAQ</NavLink>
-          </nav>
         </div>
       </header>
 
@@ -61,9 +66,9 @@ function App() {
                       </h1>
                       <p className="hero-subtitle">November 1st, 2025</p>
                       <p className="hero-description">
-                        Join us for the ultimate CrossFit competition experience. Whether
-                        you're a beginner or elite athlete, there's a place for you in our
-                        community-driven event.
+                        Join us for the ultimate CrossFit competition
+                        experience. Whether you're a beginner or elite athlete,
+                        there's a place for you in our community-driven event.
                       </p>
                       <div className="cta-buttons">
                         <a
@@ -76,7 +81,6 @@ function App() {
                           Visit Main Website
                         </a>
                       </div>
-                      <AuthBar />
                     </div>
                   </div>
                 </section>
@@ -89,7 +93,8 @@ function App() {
                       <div className="contact-info">
                         <h2 className="contact-title">Get Connected</h2>
                         <p className="contact-description">
-                          Follow us for updates, training tips, and community highlights
+                          Follow us for updates, training tips, and community
+                          highlights
                         </p>
                       </div>
                       <div className="social-links">
@@ -102,7 +107,9 @@ function App() {
                           <div className="social-icon">🌐</div>
                           <div className="social-content">
                             <span className="social-name">Website</span>
-                            <span className="social-handle">crossfitblackedition.pt</span>
+                            <span className="social-handle">
+                              crossfitblackedition.pt
+                            </span>
                           </div>
                         </a>
                         <a
@@ -113,7 +120,9 @@ function App() {
                         >
                           <div className="social-icon">🏋️‍♂️</div>
                           <div className="social-content">
-                            <span className="social-name">Membership/Planos</span>
+                            <span className="social-name">
+                              Membership/Planos
+                            </span>
                             <span className="social-handle">View Plans</span>
                           </div>
                         </a>
@@ -126,7 +135,9 @@ function App() {
                           <div className="social-icon">📘</div>
                           <div className="social-content">
                             <span className="social-name">Facebook</span>
-                            <span className="social-handle">@crossfitblackedition</span>
+                            <span className="social-handle">
+                              @crossfitblackedition
+                            </span>
                           </div>
                         </a>
                         <a
@@ -138,7 +149,9 @@ function App() {
                           <div className="social-icon">📷</div>
                           <div className="social-content">
                             <span className="social-name">Instagram</span>
-                            <span className="social-handle">@crossfitblackedition</span>
+                            <span className="social-handle">
+                              @crossfitblackedition
+                            </span>
                           </div>
                         </a>
                       </div>

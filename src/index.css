@@ -11,3 +11,35 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+/* Compact header auth area */
+.header-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.header-auth .registration-form,
+.header-auth .auth-user-bar {
+  margin-top: 0 !important;
+}
+
+.header-auth .registration-form {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.header-auth .registration-form .form-label {
+  display: none;
+}
+
+.header-auth .registration-form .form-input {
+  height: 36px;
+  padding: 0 10px;
+}
+
+.header-auth .btn {
+  height: 36px;
+}
