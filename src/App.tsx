@@ -21,17 +21,21 @@ function App() {
   return (
     <div className="App">
       {/* Header - Always visible */}
-      <header className="fixed top-0 left-0 right-0 z-50 bg-black/90 backdrop-blur-md border-b border-white/10">
+      <header className="fixed top-0 left-0 right-0 z-50 bg-cf-gray-950/95 backdrop-blur-xl border-b border-cf-gray-800/50 shadow-cf-lg">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="flex items-center justify-between h-20 gap-4">
-            <div className="flex items-center">
+          <div className="flex items-center justify-between h-20 gap-6">
+            <div className="flex items-center space-x-4">
               <img
                 src="/crossfit-black-edition-logo.png"
                 alt="CrossFit Black Edition"
-                className="h-12 w-auto"
+                className="h-14 w-auto transition-transform duration-300 hover:scale-105"
               />
+              <div className="hidden sm:block">
+                <h1 className="text-lg font-bold text-white">CrossFit Black Edition</h1>
+                <p className="text-xs text-cf-red font-semibold">GAMES 2025</p>
+              </div>
             </div>
-            <nav className="hidden md:flex items-center space-x-1">
+            <nav className="hidden lg:flex items-center space-x-2">
               <NavLink to="/">Home</NavLink>
               <NavLink to="/dashboard">Dashboard</NavLink>
               <NavLink to="/wods">WODs</NavLink>
@@ -48,37 +52,45 @@ function App() {
       </header>
 
       {/* Main content area */}
-      <main className="pt-20 min-h-screen bg-gradient-to-br from-cf-black via-cf-gray-900 to-cf-black">
+      <main className="pt-20 min-h-screen bg-gradient-to-br from-cf-gray-950 via-cf-black to-cf-gray-900">
         <Routes>
           <Route
             path="/"
             element={
               <>
                 {/* Hero Section - Only on home page */}
-                <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-cf-black via-cf-gray-900 to-cf-black">
-                  <div className="absolute inset-0 bg-gradient-to-r from-cf-red/20 via-transparent to-cf-orange/20 animate-gradient-shift"></div>
-                  <div className="absolute inset-0 bg-black/40"></div>
+                <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-cf-gray-950 via-cf-black to-cf-gray-900">
+                  <div className="absolute inset-0 bg-gradient-to-r from-cf-red/10 via-transparent to-cf-orange/10 animate-gradient-shift"></div>
+                  <div className="absolute inset-0 bg-gradient-to-b from-transparent via-cf-black/20 to-cf-black/60"></div>
+                  <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-cf-red/5 via-transparent to-transparent"></div>
                   <div className="relative z-10 max-w-7xl mx-auto px-6 text-center">
-                    <div className="space-y-8">
-                      <h1 className="text-6xl md:text-8xl font-bold text-white leading-tight">
-                        CrossFit Black Edition
-                        <span className="block text-cf-red animate-float">Games 2025</span>
-                      </h1>
-                      <p className="text-2xl md:text-3xl text-cf-orange font-semibold">November 1st, 2025</p>
-                      <p className="text-xl md:text-2xl text-white/90 max-w-4xl mx-auto leading-relaxed">
+                    <div className="space-y-12">
+                      <div className="space-y-6">
+                        <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-display font-black text-white leading-[0.9] tracking-tight">
+                          CrossFit Black Edition
+                          <span className="block text-transparent bg-clip-text bg-gradient-to-r from-cf-red via-cf-red-light to-cf-orange animate-float">
+                            Games 2025
+                          </span>
+                        </h1>
+                        <div className="inline-flex items-center px-6 py-3 bg-cf-red/10 border border-cf-red/20 rounded-full backdrop-blur-sm">
+                          <span className="text-2xl md:text-3xl text-cf-orange font-bold">November 1st, 2025</span>
+                        </div>
+                      </div>
+                      <p className="text-lg md:text-xl lg:text-2xl text-cf-gray-300 max-w-5xl mx-auto leading-relaxed font-medium">
                         Join us for the ultimate CrossFit competition experience. Whether
                         you're a beginner or elite athlete, there's a place for you in our
                         community-driven event.
                       </p>
-                      <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                      <div className="flex flex-col sm:flex-row gap-6 justify-center items-center pt-8">
                         <a
                           href="https://crossfitblackedition.pt"
-                          className="group inline-flex items-center px-8 py-4 bg-cf-red hover:bg-cf-red-dark text-white font-bold text-lg rounded-xl shadow-2xl shadow-cf-red/30 hover:shadow-cf-red/50 transition-all duration-300 hover:scale-105"
+                          className="group relative inline-flex items-center px-10 py-5 bg-gradient-to-r from-cf-red to-cf-red-light hover:from-cf-red-light hover:to-cf-red text-white font-bold text-lg rounded-2xl shadow-cf-red-lg hover:shadow-cf-red transition-all duration-500 hover:scale-105 hover:-translate-y-1"
                           target="_blank"
                           rel="noopener noreferrer"
                         >
-                          <span className="mr-3 text-2xl group-hover:animate-bounce">🌐</span>
+                          <span className="mr-4 text-2xl group-hover:animate-bounce">🌐</span>
                           Visit Main Website
+                          <div className="absolute inset-0 bg-gradient-to-r from-cf-red to-cf-red-light rounded-2xl blur opacity-30 group-hover:opacity-50 transition-opacity duration-500"></div>
                         </a>
                       </div>
                     </div>
@@ -177,23 +189,24 @@ function App() {
       </main>
 
       {/* Footer - Always visible */}
-      <footer className="bg-cf-gray-900 border-t border-white/10 py-12">
+      <footer className="bg-gradient-to-r from-cf-gray-950 via-cf-black to-cf-gray-950 border-t border-cf-gray-800/50 py-16">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-8">
-            <div className="flex items-center space-x-4">
+          <div className="flex flex-col lg:flex-row items-center justify-between gap-12">
+            <div className="flex items-center space-x-6">
               <img
                 src="/crossfit-black-edition-logo.png"
                 alt="CrossFit Black Edition"
-                className="h-16 w-auto"
+                className="h-20 w-auto transition-transform duration-300 hover:scale-105"
               />
               <div className="text-white">
-                <h3 className="text-2xl font-bold">CrossFit Black Edition</h3>
-                <p className="text-cf-red font-semibold">GAMES 2025</p>
+                <h3 className="text-3xl font-display font-black">CrossFit Black Edition</h3>
+                <p className="text-cf-red font-bold text-lg">GAMES 2025</p>
+                <p className="text-cf-gray-400 text-sm font-medium mt-1">November 1st, 2025</p>
               </div>
             </div>
-            <div className="text-center md:text-right text-white/80">
-              <p>© 2025 CrossFit Black Edition Games. All rights reserved.</p>
-              <p className="text-sm text-white/60 mt-2">
+            <div className="text-center lg:text-right">
+              <p className="text-cf-gray-300 font-medium">© 2025 CrossFit Black Edition Games. All rights reserved.</p>
+              <p className="text-sm text-cf-gray-500 mt-3 font-medium">
                 (Blame Bernardo Caetano, athlete of this awesome box)
               </p>
             </div>

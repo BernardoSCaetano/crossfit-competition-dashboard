@@ -8,17 +8,23 @@ interface NavLinkProps {
 export default function NavLink({ to, children }: NavLinkProps) {
   const location = useLocation();
   const isActive = location.pathname === to;
-  
+
   return (
-    <Link 
-      className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300 ${
-        isActive 
-          ? 'bg-cf-red text-white shadow-lg shadow-cf-red/30' 
-          : 'text-white/80 hover:text-white hover:bg-white/10 hover:shadow-md'
-      }`} 
+    <Link
+      className={`relative px-4 py-2.5 rounded-xl text-sm font-semibold transition-all duration-300 group ${
+        isActive
+          ? "bg-cf-red text-white shadow-cf-red"
+          : "text-cf-gray-300 hover:text-white hover:bg-cf-gray-800/50 hover:shadow-cf"
+      }`}
       to={to}
     >
-      {children}
+      <span className="relative z-10">{children}</span>
+      {isActive && (
+        <div className="absolute inset-0 bg-gradient-to-r from-cf-red to-cf-red-light rounded-xl shadow-cf-red-lg"></div>
+      )}
+      {!isActive && (
+        <div className="absolute inset-0 bg-gradient-to-r from-cf-gray-800/0 to-cf-gray-800/0 group-hover:from-cf-gray-800/20 group-hover:to-cf-gray-800/20 rounded-xl transition-all duration-300"></div>
+      )}
     </Link>
   );
 }

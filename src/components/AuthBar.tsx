@@ -37,16 +37,19 @@ const AuthBar: React.FC = () => {
   if (user) {
     return (
       <div className="flex items-center space-x-4">
-        <span className="text-white/80 text-sm">Signed in as {user.email}</span>
-        <div className="flex items-center space-x-2">
+        <div className="hidden sm:block">
+          <span className="text-cf-gray-300 text-sm font-medium">Signed in as</span>
+          <span className="text-white text-sm font-semibold ml-1">{user.email}</span>
+        </div>
+        <div className="flex items-center space-x-3">
           <Link 
-            className="px-4 py-2 bg-white/10 hover:bg-white/20 text-white text-sm font-medium rounded-lg transition-all duration-200" 
+            className="px-4 py-2.5 bg-cf-gray-800/50 hover:bg-cf-gray-700/50 text-cf-gray-200 hover:text-white text-sm font-semibold rounded-xl border border-cf-gray-700/50 hover:border-cf-gray-600/50 transition-all duration-300 hover:shadow-cf" 
             to="/me"
           >
             Profile
           </Link>
           <button 
-            className="px-4 py-2 bg-cf-red hover:bg-cf-red-dark text-white text-sm font-medium rounded-lg transition-all duration-200" 
+            className="px-4 py-2.5 bg-gradient-to-r from-cf-red to-cf-red-light hover:from-cf-red-light hover:to-cf-red text-white text-sm font-semibold rounded-xl shadow-cf-red transition-all duration-300 hover:shadow-cf-red-lg hover:scale-105" 
             onClick={signOut}
           >
             Sign out
@@ -59,7 +62,7 @@ const AuthBar: React.FC = () => {
   return (
     <form onSubmit={signIn} className="flex items-center space-x-3">
       <input
-        className="px-4 py-2 bg-white/10 border border-white/20 rounded-lg text-white placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-cf-red focus:border-transparent"
+        className="px-4 py-2.5 bg-cf-gray-800/50 border border-cf-gray-700/50 rounded-xl text-white placeholder-cf-gray-400 focus:outline-none focus:ring-2 focus:ring-cf-red focus:border-cf-red transition-all duration-300 hover:border-cf-gray-600/50"
         type="email"
         placeholder="you@example.com"
         value={email}
@@ -67,12 +70,12 @@ const AuthBar: React.FC = () => {
         required
       />
       <button 
-        className="px-4 py-2 bg-cf-red hover:bg-cf-red-dark text-white font-medium rounded-lg transition-all duration-200 hover:scale-105" 
+        className="px-5 py-2.5 bg-gradient-to-r from-cf-red to-cf-red-light hover:from-cf-red-light hover:to-cf-red text-white font-semibold rounded-xl shadow-cf-red transition-all duration-300 hover:shadow-cf-red-lg hover:scale-105" 
         type="submit"
       >
         Send Link
       </button>
-      {status && <p className="text-white/80 text-sm">{status}</p>}
+      {status && <p className="text-cf-gray-300 text-sm font-medium">{status}</p>}
     </form>
   );
 };
